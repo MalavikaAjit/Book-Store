@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#00000059;
+}
+img{
+    width: 100%;
+}
+.first-container{
+    width: 800px;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+}
+.first-inner-container{
+   position: relative;
+    
+}
+.main-container{
+    position: absolute;
+    top: 25%;
+}
+.shopping-cart-div{
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+}
+.shopping-cart-div img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+.shopping-cart-div h3{
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 20px;
+}
+.login-signup-div{
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    width: 400px;
+    height: 456px;
+    padding: 20px 40px;
+}
+.cart_img{
+    position: absolute;
+    top: 14%;
+    left: 10%;
+}
+.signin_nav {
+    text-align: right;
+}
+#myTab li{
+    width: 50%;
+}
+.space{
+    padding: 8px 20px;
+}
+.space button{
+    background-color: #A03037;
+    width: 278px;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 15px;
+}
+.orTag{
+    font-size: 1rem;
+}
+.orTag::before,
+.orTag::after {
+    display: inline-block;
+    content: "";
+    border-top: 2px solid #6c757da6;
+    width: 6rem;
+    margin: 0 1rem;
+    transform: translateY(0rem);
+}
+.lastBtn button{
+    padding: 8px 20px;
+    border-radius: 3px;
+}
+.lastBtn{
+    border-radius: 3px;
+    padding: 18px;
+    font-size: 15px;
+}
+.lastBtn .btn-secondary{
+    float: right !important;
+    width: 126px;
+}
+.lastBtn .btn-primary{
+  width: 126px;
+}
+.nav-item .toggle{
+    border: none !important;
+    color: #878787;
+}
+.nav-item .toggle:active{
+    color: #878787;
+}
+.space_signup button{
+    margin-top: 13px;
+    background-color: #A03037;
+    width: 278px;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 15px;
+}
+.space_signup{
+    padding: 1px 20px;
+}
+#profile-tab,
+#home-tab{
+    font-size: 25px;
+    font-weight: 500;
+}
+.error_class{
+    font-size: 12px;
+    padding-left: 20px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    color: red;
+    margin-top: -7px;
+}
+label{
+    margin-bottom: 0px!important;
+}
+.forgot_pass{
+    margin-top: 2px;
+    float: right;
+}
