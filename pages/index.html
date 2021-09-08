@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="space">
-                                    <button type="button" class="btn btn-secondary btn-sm" onclick="validator('index')">Login</button>
+                                    <button type="button" class="btn btn-secondary btn-sm" onclick="validateLogin()">Login</button>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -73,30 +73,34 @@
                             <div class="col-md-12">
                                 <div class="space_signup">
                                     <label for="email-label">Full Name</label>
-                                    <input class="form-control" placeholder="Enter Name">
+                                    <input class="form-control" id="fullname" placeholder="Enter Name">
                                 </div>
+                                <div class="error_class2" id="name-error"></div>
                             </div>
                             <div class="col-md-12">
                                 <div class="space_signup">
                                     <label for="email-label">Email</label>
-                                    <input class="form-control" placeholder="Enter email">
+                                    <input class="form-control"  id="email1" placeholder="Enter your email">
                                 </div>
+                                <div class="error_class2" id="email-error1"></div> 
                             </div>
                             <div class="col-md-12">
                                 <div class="space_signup">
                                     <label for="email-label">Password</label>
-                                    <input class="form-control" placeholder="Enter password">
+                                    <input class="form-control" id="password1" placeholder="Enter password">
                                 </div>
+                                <div class="error_class2" id="password-error1"></div>
                             </div>
                             <div class="col-md-12">
                                 <div class="space_signup">
                                     <label for="email-label">Mobile Number</label>
-                                    <input class="form-control" placeholder="Enter phone no">
+                                    <input class="form-control" id="phone" placeholder="Enter phone no">
                                 </div>
+                                <div class="error_class2" id="phone-error"></div>
                             </div>
                             <div class="col-md-12">
                                 <div class="space_signup">
-                                    <button type="button" class="btn btn-secondary btn-sm">Signup</button>
+                                    <button type="button" class="btn btn-secondary btn-sm" onclick="validateSignIn()">Signup</button>
                                 </div>
                             </div>
                         </div>
@@ -108,6 +112,8 @@
      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../javascript/login-signin.js"></script>
+    <script src="../service/service.js"></script>
 </body>
 </html>

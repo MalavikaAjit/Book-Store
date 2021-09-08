@@ -133,6 +133,13 @@ img{
     color: red;
     margin-top: -7px;
 }
+.error_class2{
+    font-size: 12px;
+    padding-left: 20px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    color: red;
+    margin-top: 14px;
+}
 label{
     margin-bottom: 0px!important;
 }
