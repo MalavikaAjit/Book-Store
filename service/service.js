@@ -3,9 +3,9 @@
 
 const baseUrl = "https://new-bookstore-backend.herokuapp.com/";
 
-const headers = {
+const headerss = {
     'Content-Type': 'application/json',
-    'Authorization': localStorage.getItem('token')
+    // 'Authorization': localStorage.getItem('token')
 };
 
 // function getService(meth, url, data, headerss) {
@@ -69,7 +69,7 @@ function getService( url, headerss) {
  function postService( url, data, headerss) {
         // console.log(meth, baseUrl1 + url, data, headerss)
         return new Promise((resol, rej) => {
-            var resolved = axios.get(baseUrl + url,data, headerss);
+            var resolved = axios.post(baseUrl + url,data, headerss);
             resol(resolved);
         })
     }

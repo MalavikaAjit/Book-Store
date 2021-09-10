@@ -99,8 +99,28 @@ function validateLogin() {
         validateEmail();
         validateEmptyEmail();
        validateEmptyPassword();
-       validatePassword(); 
+    //    validatePassword(); 
        
+
+let data =
+ {
+    "email": email.value,
+    "password": password.value
+  }
+//   const baseurl1 =  "https://new-bookstore-backend.herokuapp.com​​/bookstore_user/login";
+// axios.post(baseurl, data, headers)
+// const headers = {
+//     'Content-Type': 'application/json',
+// };
+postService('/bookstore_user/registration', data, headers)
+// axios.post(baseurl1, data, headers)
+.then(res=> {
+    console.log(res)
+    console.log(res.data.result)  ;     
+    console.log("yaay")   ;   
+    localStorage.setItem("accessToken", res.data.result);  
+       
+})
 }
 
 function validateSignIn(){
@@ -122,33 +142,18 @@ function validateSignIn(){
       }
     //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
     // axios.post(baseurl, data, headers)
-    postService('/bookstore_user/registration', data, headers)
+    const headers = {
+        'Content-Type': 'application/json',
+        // 'Authorization': localStorage.getItem('token')
+    };
+    postService('bookstore_user/registration', data, headers)
+    // axios.post(baseurl, data, headers)
     .then(res=> {
         console.log(res)
         console.log(res.result._id)               
             localStorage.setItem("token", res.result._id);
 })
-    
-    
-    // let data = {
-
-    // }
-    // postService('post', '/user/login', data)
-    //   .then(result => {
-
-    //     localStorage.setItem("token", result.id);
-    //     if (result.id) {
-    //     //   window.location.href = 'dashboard.html';
-    //       console.log("inside120")
-    //     }
-
-
-    //     return console.log('Success:', result);
-
-    //   })
-    //   .catch((err) => {
-    //     console.log(err)
-    //   })
+   
  }
 
 

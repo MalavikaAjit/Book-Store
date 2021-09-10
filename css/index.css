@@ -5,6 +5,9 @@
 }
 body{
     background-color:#00000059;
+    display: flex;
+    min-height: 100vh;
+    
 }
 img{
     width: 100%;
@@ -23,18 +26,18 @@ img{
     position: absolute;
     top: 25%;
 }
-.shopping-cart-div{
+.shopping-cart-div {
     width: 800px;
-    height: 400px;
+    height: 420px;
     background-color: white;
     text-align: center;
     border-radius: 20px;
     padding: 10px;
     position: relative;
 }
-.shopping-cart-div img{
-    height: 250px;
-    width: 250px;
+.shopping-cart-div img {
+    height: 255px;
+    width: 255px;
     border-radius: 50%;
 }
 .shopping-cart-div h3{
@@ -42,21 +45,21 @@ img{
     font-size: 18px;
     padding: 20px;
 }
-.login-signup-div{
+.login-signup-div {
     position: absolute;
-    top: -29px;
+    top: -34px;
     left: 50%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 5px 15px #00000029;
     border: 1px solid #E4E4E4;
     border-radius: 6px;
     width: 400px;
-    height: 456px;
+    height: 485px;
     padding: 20px 40px;
 }
 .cart_img{
     position: absolute;
-    top: 14%;
+    top: 12%;
     left: 10%;
 }
 .signin_nav {
@@ -66,14 +69,21 @@ img{
     width: 50%;
 }
 .space{
-    padding: 8px 20px;
+    padding: 17px 2px;
+}
+.spaceOr{
+    display: flex;
+    justify-content: center;
+    padding: 17px 2px;
 }
 .space button{
+    margin-top: 0px;
     background-color: #A03037;
-    width: 278px;
+    width: 286px;
     border-radius: 3px;
-    padding: 8px;
+    padding: 7px 0 7px;
     font-size: 15px;
+
 }
 .orTag{
     font-size: 1rem;
@@ -83,7 +93,7 @@ img{
     display: inline-block;
     content: "";
     border-top: 2px solid #6c757da6;
-    width: 6rem;
+    width: 5rem;
     margin: 0 1rem;
     transform: translateY(0rem);
 }
@@ -93,15 +103,18 @@ img{
 }
 .lastBtn{
     border-radius: 3px;
-    padding: 18px;
+    /* padding: 5px; */
     font-size: 15px;
+    display: flex;
+    /* padding-right: 34px; */
+    width: 100%;
 }
 .lastBtn .btn-secondary{
     float: right !important;
-    width: 126px;
+    width: 100%;
 }
 .lastBtn .btn-primary{
-  width: 126px;
+  width: 100%;
 }
 .nav-item .toggle{
     border: none !important;
@@ -110,16 +123,16 @@ img{
 .nav-item .toggle:active{
     color: #878787;
 }
-.space_signup button{
-    margin-top: 13px;
+.space_signup button {
+    margin-top: 0px;
     background-color: #A03037;
-    width: 278px;
+    width: 286px;
     border-radius: 3px;
-    padding: 8px;
+    padding: 7px 0 2px;
     font-size: 15px;
 }
 .space_signup{
-    padding: 1px 20px;
+    padding: 1px 2px;
 }
 #profile-tab,
 #home-tab{
@@ -133,12 +146,12 @@ img{
     color: red;
     margin-top: -7px;
 }
-.error_class2{
-    font-size: 12px;
-    padding-left: 20px;
+.error_class2 {
+    font-size: 10px;
+    padding-left: 4px;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
     color: red;
-    margin-top: 14px;
+    /* margin-top: 14px; */
 }
 label{
     margin-bottom: 0px!important;
@@ -146,4 +159,175 @@ label{
 .forgot_pass{
     margin-top: 2px;
     float: right;
+}
+/******/
+/* .first-container{
+    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.password {
+    margin-top: 1%;
+}
+.sign-in {
+    margin: 5% 0 0%;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.password input.form-control {
+    padding-right: 6px;
+    padding-bottom: 7px;
+}
+.content {
+    padding: 0px 0px 0px;
+    /* border-style: solid; */
+    /* border-width: 1.5px; */
+    /* border-color: rgb(187, 185, 185); */
+    /* border-radius: 10px; */
+    width: 20rem;
+    height: 85%;
+    /* display: flex; */
+    /* flex-direction: row; */
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 604px) {
+    .shopping-cart-div{
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;       
+    } 
+    .form-content {
+        width: 100%;
+        /* padding-bottom: 279px; */
+    }
+    .content {
+        /* padding: 37px 43px 49px; */
+        /* border-style: solid; */
+        /* border-width: 1.5px; */
+        /* border-color: rgb(187, 185, 185); */
+        border-radius: 10px;
+        width: 100% !important;
+        height: 100vh !important;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .first-container {
+        margin-top: 32px;
+        height: 100% !important;
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        width: 100% !important;
+    }
+    .password input.form-control {
+        /* padding-right: 100%; */
+        padding-bottom: 17px;
+        width: 100% !important;
+    }
+    .space button,
+    .space_signup button {
+        margin-top: 0px;
+        background-color: #A03037;
+        width: 100% !important;
+        border-radius: 3px;
+        padding: 7px 0 2px;
+        font-size: 15px;
+    }
+    .login-signup-div {
+        /* position: absolute; */
+        top: -34px;
+        /* left: 50%; */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 15px #00000029;
+        border: 1px solid #E4E4E4;
+        border-radius: 6px;
+        width: 100vw !important;
+        height: 100vh !important;
+        padding: 20px 40px !important;
+        overflow: hidden;
+    }
+    .orTag::before, .orTag::after {
+        display: inline-block;
+        content: "";
+        border-top: 2px solid #6c757da6;
+        width: 6rem;
+        margin: 0px 0rem;
+        transform: translateY(0rem);
+    }
+}
+@media only screen and (min-width: 604px) and (max-width: 820px) {
+
+    .space button {
+        margin-top: 0px;
+        background-color: #A03037;
+        width: 272px;
+        border-radius: 3px;
+        padding: 7px 0 7px;
+        font-size: 15px;
+    }
+    .main-container {
+        position: absolute;
+        top: 25%;
+        padding-left: 31px;
+    }
+    .shopping-cart-div {
+        width: 700px;
+        height: 420px;
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        padding: 10px;
+        position: relative;
+    }
+    .cart_img {
+        position: absolute;
+        top: 15%;
+        left: 7%;
+    }
+    .shopping-cart-div img {
+        height: 230px;
+        width: 230px;
+        border-radius: 50%;
+    }
+    .login-signup-div {
+        position: absolute;
+        top: -34px;
+        left: 50%;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 15px #00000029;
+        border: 1px solid #E4E4E4;
+        border-radius: 6px;
+        width: 378px;
+        height: 485px;
+        padding: 20px 40px;
+    }
+    .content {
+        padding: 0px 0px 0px;
+        /* border-style: solid; */
+        /* border-width: 1.5px; */
+        /* border-color: rgb(187, 185, 185); */
+        /* border-radius: 10px; */
+        width: 19rem;
+        height: 85%;
+        /* display: flex; */
+        /* flex-direction: row; */
+        overflow: hidden;
+    }
 }
