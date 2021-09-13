@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.searchInput {
+  width: 600px !important;
+  background: #f1f3f4;
+  border: none;
+}
+.icon_flex {
+  display: flex;
+  align-items: center;
+ 
+}
+.float-direction-left {
+  float: left;
+}
+.headerDetails{
+  font-size: 20px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+.footerDetails {
+  font-size: 12px;
+  font-weight: 300;
+  color: #FFFFFF;
+  margin-left: 12px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.header_nav {
+  height: 60px;
+  background-color: #A03037;
+  border-bottom: 1px solid #d0d0d0;
+}
+.footer_nav{
+  height: 50px;
+  background-color: #2E1D1E;
+  border-bottom: 1px solid #d0d0d0;
+}
+.searchBarIcon{
+  width: 490px;
+  padding-left: 17px;
+}
+.books{
+  font-size: 25px;
+  font-weight: 500;
+  color: #0A0102;
+}
+.heading{
+  display: flex;
+  flex-direction: column;
+}
+.sort{
+  float: right;
+  font-size: 12px;
+  padding-top: 12px;
+}
+.headerTags{
+  font-size: 12px;
+  color: #f8f9fa
+}
+.nav-icons {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+.nav-icons:hover {
+  opacity: 0.87;
+  background-color: rgba(205, 216, 230, 0.157);
+}
+.nav-icons span {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.header-logo {
+  height: 4em;
+}
+
+.header-title {
+  color: #5f6368;
+  font-size: 2rem;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+
+#form:focus,
+input:focus {
+  outline: none;
+}
+
+
+  .note-icons {
+  padding-left: 17px;
+  padding-top: 10px;
+}
+.note-icons .icons_span {
+  padding: 0px 10px;
+  color: #5f6368;
+  font-size: 18px !important;
+}
+.note-icons .material-icons {
+  font-size: 18px !important;
+  cursor: pointer;
+}
+.note-icons .icons_span:first-child {
+  padding: 0px !important;
+}
+.note-icons .icons_span:last-child {
+  padding: 0px !important;
+}
+.modal-backdrop.show {
+  opacity: 0.5 !important;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url(../assets/dashboard-page/person_black_24dp.svg);
+}
+.navbar-toggler-icon {
+  background-size: 75% 75%;
+}
+.navbar-light .navbar-toggler {
+  border: none;
+}
+/**************/
+.box-section-container {
+  /* display: flex;
+  flex-flow: row nowrap; */
+  margin-top: 150px;
+  /* padding: 7px; */
+}
+
+.footer-nav{
+position: relative;
+  bottom: 0px;
+  width: 100%;
+  background-color: #2E1D1E;
+  padding: 10px 0px;
+}
+
+.bookDes{
+font-size: 10px;
+}
+
+
+p {
+font-family: 'Roboto';
+color: #969696;
+font-weight: 400;
+font-size: 10px;
+margin-bottom: 0px;
+font-family: "Roboto", sans-serif;
+}
+
+/******************************************/
+.box1 {
+  border: 1px solid #E2E2E2;
+  height: 294px;
+  /* width: 223px; */
+  background-color: #ffff;
+  border-radius: 2px;
+}
+
+
+
+.img-box {
+background: #F5F5F5;
+position: relative;
+height: 179px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.gallery-margin h1{
+  font-size: 18px;
+}
+/* .imageEdu{
+  background: url('../assets/dashboard/education.png') 0% 0% no-repeat padding-box;
+} */
+.img-fluid {
+  max-width: 100%;
+  height: 139px;
+  /* position: relative;
+  top: 20px;
+  left: 52px; */
+}
+.tags {
+  padding-left: 17px;
+  padding-top: 12px;
+} 
+.tags h3{
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+
+}
+.price {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0A0102;
+  font-family: "Roboto", sans-serif;
+}
+
+.lastBtn button {
+padding: 3px 13px;
+border-radius: 3px;
+}
+.lastBtn {
+border-radius: 3px;
+/* padding: 5px; */
+font-size: 15px;
+display: flex;
+/* padding-right: 34px; */
+width: 88%;
+padding-top: 7px;
+}
+.addToBagBtn{
+padding-left: 0px;
+}
+/* .wishlistBtn{
+padding-left: 0px;
+} */
+.btn-primary {
+color: #fff;
+background-color: #a30e1d;
+border-color: #bd2130;
+}
+.btn-secondary {
+color: #fff;
+background-color: #e9ecef;
+border-color: #6c757d61;
+}
+.btn-sm {
+
+font-size: 11px;
+line-height: 1.5;
+
+}
+.btnTag2{
+color: #0A0102;
+}
+
+/**********************/
+.section-1{
+  margin-top: 100px;
+}
+.button5{
+    border-radius: 50%;
+    background: #fff;
+    /* background-color: #25976d; */
+    border: 1px solid grey;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+    margin: 16px 2px
+}
+
+
+.myCart-container {
+  border: 1px solid #80808073;
+  border-radius: 3px;
+}
+.myCart {
+    margin: 18px 35px 0px;
+}
+.bookimg img{
+    width: 65px;
+    height: 85px;
+}
+ .bookDetails{
+  margin: 24px 33px 33px;
+    display: flex;
+}
+.tags {
+    padding-left: 36px;
+    padding-top: 0px;
+    line-height: 2;
+}
+
+
+
+
+
+

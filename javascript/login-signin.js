@@ -109,18 +109,19 @@ let data =
   }
 //   const baseurl1 =  "https://new-bookstore-backend.herokuapp.com​​/bookstore_user/login";
 // axios.post(baseurl, data, headers)
-// const headers = {
-//     'Content-Type': 'application/json',
-// };
-postService('/bookstore_user/registration', data, headers)
+const headers = {
+    'Content-Type': 'application/json',
+};
+postService('bookstore_user/login', data, headers)
 // axios.post(baseurl1, data, headers)
 .then(res=> {
     console.log(res)
     console.log(res.data.result)  ;     
     console.log("yaay")   ;   
-    localStorage.setItem("accessToken", res.data.result);  
+    localStorage.setItem("accessToken", res.data.result.accessToken);  
        
 })
+clearLogin();
 }
 
 function validateSignIn(){
@@ -153,26 +154,21 @@ function validateSignIn(){
         console.log(res.result._id)               
             localStorage.setItem("token", res.result._id);
 })
-   
+clearSignIn();
  }
 
-
-//  function loginCheck(inputArr) {
-//     inputArr.forEach(input => {
-//       if (err == true) {
-//         console.log(input, "required");
-//       }
-//       else {
-//         console.log('');
-//       }
-  
-//     });
-//   }
-//   function  validateSigninnn ()  {
-//     loginCheck([phone,password,email,name]); 
-//     if(err == true){
-//     console.log("yaay");
-//     }else{
-//         console.log("nope");
-//     }
-//   }
+function clearLogin(){
+   
+    document.getElementById("email").value ='';
+    document.getElementById("password").value ='';
+   console.log("cleared");
+    
+}
+function clearSignIn(){
+    document.getElementById("fullname").value ='';
+    document.getElementById("email1").value ='';
+    document.getElementById("password1").value ='';
+    document.getElementById("phone").value ='';
+   console.log("cleared signin");
+    
+}
