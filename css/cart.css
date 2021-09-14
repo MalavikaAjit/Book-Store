@@ -36,11 +36,11 @@ body {
   background-color: #A03037;
   border-bottom: 1px solid #d0d0d0;
 }
-.footer_nav{
+/* .footer_nav{
   height: 50px;
   background-color: #2E1D1E;
   border-bottom: 1px solid #d0d0d0;
-}
+} */
 .searchBarIcon{
   width: 490px;
   padding-left: 17px;
@@ -102,11 +102,6 @@ header {
 }
 
 
-#form:focus,
-input:focus {
-  outline: none;
-}
-
 
   .note-icons {
   padding-left: 17px;
@@ -153,6 +148,7 @@ position: relative;
   width: 100%;
   background-color: #2E1D1E;
   padding: 10px 0px;
+  display: none;
 }
 
 .bookDes{
@@ -213,7 +209,7 @@ align-items: center;
 
 }
 .price {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: #0A0102;
   font-family: "Roboto", sans-serif;
@@ -273,9 +269,25 @@ color: #0A0102;
     text-decoration: none;
     display: inline-block;
     font-size: 9px;
-    margin: 16px 2px
+    margin: 16px 2px;
+    color: #2E1D1E;
+    width: 24px;
 }
-
+.middleBtn{
+  border-radius: 9%;
+    width: 39px;
+    background: #fff;
+    /* background-color: #25976d; */
+    border: 1px solid grey;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+    margin: 16px 2px;
+    color: #2E1D1E;
+}
 
 .myCart-container {
   border: 1px solid #80808073;
@@ -283,6 +295,7 @@ color: #0A0102;
 }
 .myCart {
     margin: 18px 35px 0px;
+    font-size: 18px;
 }
 .bookimg img{
     width: 65px;

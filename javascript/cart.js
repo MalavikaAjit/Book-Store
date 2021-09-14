@@ -33,7 +33,7 @@ function getBookDetails(){
                             <button type="button" class="btn btn-primary btn-sm" id="`+bookDetails[i]._id+`" onclick="addToCart(id)">ADD TO BAG</button>
                         </div>
                         <div class="col-sm-6 wishlistBtn">
-                            <button type="button" class="btn btn-secondary  btn-sm btnTag2">WISHLIST</button>
+                            <button type="button" class="btn btn-secondary  btn-sm btnTag2" id="`+bookDetails[i]._id+`" onclick="addToWishlist(id)">WISHLIST</button>
                         </div>
         
                     </div>
@@ -56,11 +56,14 @@ function addToCart(id){
     }
     //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
     // axios.post(baseurl, data, headers)
-    const headers = {
+    const headConfig = {
+     headers : {
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('accessToken')
-    };
-    postService('bookstore_user/add_cart_item/{"id"}', data, headers)
+        'x-access-token': localStorage.getItem('accessToken')
+    }
+}
+    // console.log("headers",headers);
+    postService(`bookstore_user/add_cart_item/${id}`, data, headConfig)
     // axios.post(baseurl, data, headers)
     .then(res=> {
         console.log(res);
@@ -69,17 +72,31 @@ function addToCart(id){
 })
 
 }
-    // arrayOfATags.push(obj);
-   
+
+function addToWishlist(id){
+    console.log("iddd",id)
+    let data =
+    {
+        "product_id": id,
+    }
+    //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
+    // axios.post(baseurl, data, headers)
+    const headConfig = {
+     headers : {
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('accessToken')
+    }
+}
+    // console.log("headers",headers);
+    postService(`bookstore_user/add_wish_list/${id}`, data, headConfig)
+    // axios.post(baseurl, data, headers)
+    .then(res=> {
+        console.log(res);
+        // console.log(res.result._id)               
+            
+})
+
+}
+    
 
 
-
-// function settingInnerHtml(item) {
-//     var string  = '<a class="col-lg-3 col-md-4 col-sm-6 box" href="#"><div><img id="img-sec" class="image" src="' + item.imagePath + '" alt=""></div><h1>' + item.heading +'</h1><p> ' + item.tag + '</p></a>';
-//     return string
-// arrayOfATags.map(settingInnerHtml).join("");
-// }
-
-
-
-getBookDetails();

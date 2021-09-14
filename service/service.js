@@ -5,7 +5,7 @@ const baseUrl = "https://new-bookstore-backend.herokuapp.com/";
 
 const headerss = {
     'Content-Type': 'application/json',
-    // 'Authorization': localStorage.getItem('token')
+    'x-access-token': localStorage.getItem('accessToken')
 };
 
 // function getService(meth, url, data, headerss) {
