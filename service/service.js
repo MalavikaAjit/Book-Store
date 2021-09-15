@@ -73,3 +73,20 @@ function getService( url, headerss) {
             resol(resolved);
         })
     }
+
+    function putService( url, data, headerss) {
+        // console.log(meth, baseUrl1 + url, data, headerss)
+        return new Promise((resol, rej) => {
+            var resolved = axios.put(baseUrl + url,data, headerss);
+            resol(resolved);
+        })
+    }    
+
+    function deleteService( url, headerss) {
+        // console.log( baseUrl1 + url, data, headerss)
+        return new Promise((resol, rej) => {
+            var resolved = axios.delete(baseUrl + url, headerss);
+            resol(resolved);
+           })           
+        
+    }
