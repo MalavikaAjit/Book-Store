@@ -1,136 +1,19 @@
 var imgArray = ["Image 36.png", "Image 13.png", "Image 12.png", "Image 14.png", "Image 18.png", "Image 10.png", "Image 7.png", "Image 22.png", "Image 18.png", "Image 10.png", "Image 11.png", "Image 36.png", "Image 22.png", "Image 23.png", "Image 7.png", "Image 13.png"];
 var path = "../assets/dashboard/";
-var bookDetails;
-// var headingArray = ["North Shore Preserve","James Island","Costeterra","Barbuda Ocean Club","Driftwood","Troubadour","Playa Grande","Chileno Bay","The Summit"];
-// var tagArray = ["Kaua'i, Hawaii","Southern Gulf Islands","Comporta, Portugal", "Barbuda, West Indies","Austin, Texas","Nashville, Tennessee","Rio San Juan, Dominican Republic","Cabo San Lucas, Mexico","Las Vegas, Nevada"];
-// var priceArray = ["rs 15005","rs 157800","rs 21500", "rs 152200","rs 15070","rs 15800","rs 144500","rs 81500","rs 1500a"];
-// var arrayOfATags = [];
-let detailsHTML = '';
+const hideDetails = document.getElementById("hideDetails");
+const hideOrder = document.getElementById("hideOrder");
+const hideBtn1 = document.querySelector('#placeOrder');
+const hideBtn2 = document.querySelector('#continue');
+const fullName = document.querySelector('#fullName');
+const hideBtn0 = document.querySelector('#placeOrderBtn');
+var count = 0;
+var bookData;
+let cartDetailsHTML = '';
+let orderSummaryHTML = '';
+let buttonHTML = '';
 
-
-
-
-function getBookDetails() {
-    const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('accessToken')
-    };
-    getService('bookstore_user/get/book', headers)
-        .then(res => {
-            console.log("res", res.data.result);
-            bookDetails = res.data.result;
-            for (var i = 0; i < bookDetails.length; i++) {
-                var lastBtn = "lastBtn" + bookDetails._id;
-                var add_item = "addTo" + bookDetails._id;
-                var wish = "wishTo" + bookDetails._id;
-                detailsHTML += `<div class="col-lg-3 col-md-4 col-sm-6 pt-3  pb-3 gallery-margin">
-            <div class="box1">
-                <div class="img-box">
-                    <img class="img-fluid" src="`+ path + imgArray[i] + `" alt="">
-                </div>
-                <div class="tags">
-                    <h3 class="bookDes">`+ bookDetails[i].description + `</h3>
-                    <p>`+ bookDetails[i].author + `</p>
-                    <p class="price">Rs ` + bookDetails[i].price + `</p>
-                    <div class="lastBtn" id="`+ lastBtn + `">
-                        <div class="col-sm-6 addToBagBtn">
-                      <button type="button" class="btn btn-primary btn-sm addTo" id="`+ i + `" onclick="addToCart(id);">ADD TO BAG</button>
-                        </div>
-                        <div class="col-sm-6 wishlistBtn" id="wishlistBtn">
-                            <button type="button" class="btn btn-secondary  btn-sm wishTo" id="`+ i + `" onclick="addToWishlist(id)">WISHLIST</button>
-                        </div>
-        
-                    </div>
-                    <div class="lastBtnAdd">
-                        <div class="col-sm-6 addToBagBtn" id=`+ add_item + ` style="display: none">
-                            <button type="button" class="btn btn-primary btn-sm addTo" >ADD TO BAG</button>
-                        </div>
-                    </div>
-                    <div class="lastBtn" id="lastBtn">
-                    <div class="col-sm-6 wishlistBtn" id="`+ wish + `" style="display: none">
-                        <button type="button" class="btn btn-secondary  btn-sm wishTo" >WISHLIST</button>
-                    </div>
-    
-                </div>
-                    
-                </div>
-            </div>
-        </div>`
-            }
-            document.getElementById('bookCount').innerHTML = `Books (${bookDetails.length})`
-            document.getElementById("bookList").innerHTML = detailsHTML;
-        })
-}
-
-
-getBookDetails();
-
-function addToCart(i) {
-    var selectedItem = bookDetails[i];
-    console.log("iddd", selectedItem)
-    let data =
-    {
-        "product_id": selectedItem._id,
-    }
-    //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
-    // axios.post(baseurl, data, headers)
-    const headConfig = {
-        headers: {
-            'Content-Type': 'application/json',
-            'x-access-token': localStorage.getItem('accessToken')
-        }
-    }
-    // console.log("headers",headers);
-    postService(`bookstore_user/add_cart_item/${selectedItem._id}`, data, headConfig)
-        // axios.post(baseurl, data, headers)
-        .then(res => {
-            console.log(res);
-            if(res){                
-                    window.location.href = 'cart.html';
-                   showPlaceOrder();
-            }
-                    
-                        })
-                    
-            }
-            // if (document.getElementById('lastBtn' + selectedItem._id)) {
-            //     if (document.getElementById('lastBtn' + selectedItem._id).style.display = "block") {
-            //         document.getElementById('lastBtn' + selectedItem._id).style.display = "none";
-            //         //    document.getElementById('addTo'+selectedItem._id).style.display = "block";   
-            //     }
-            // }
-
-       
-
-
-
-function addToWishlist(i) {
-    var selectedItem = bookDetails[i];
-    console.log("iddd", id)
-    let data =
-    {
-        "product_id": selectedItem._id,
-    }
-    //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
-    // axios.post(baseurl, data, headers)
-    const headConfig = {
-        headers: {
-            'Content-Type': 'application/json',
-            'x-access-token': localStorage.getItem('accessToken')
-        }
-    }
-    // console.log("headers",headers);
-    postService(`bookstore_user/add_wish_list/${selectedItem._id}`, data, headConfig)
-        // axios.post(baseurl, data, headers)
-        .then(res => {
-            console.log(res);
-            // console.log(res.result._id)               
-
-        })
-
-}
 function getCartDetails() {
-    // console.log("itemadded",item)
+
     const headConfig = {
         headers: {
             'Content-Type': 'application/json',
@@ -140,71 +23,268 @@ function getCartDetails() {
     getService('bookstore_user/get_cart_items', headConfig)
         .then(res => {
             // window.location.href = 'cart.html';
-            if( window.location.href = 'cart.html'){
-            let bookData = res.result;
-            console.log("res", bookData);
-            displayCart(bookData);
+            console.log("response ", res)
+            bookData = res.data.result;
+            console.log("bookData", bookData);
+            for (var i = 0; i < bookData.length; i++) {
+
+
+                cartDetailsHTML += `             
+               
+                <div class="book_cart_details">
+                            <div class="bookimg">
+                                <img src="`+ path + imgArray[i] + `" alt="">
+                            </div>
+                            <div class="bookshipping">
+                                <div class="tags">
+                                    <h3>`+ bookData[i].product_id.description + `</h3>
+                                    <p>`+ bookData[i].product_id.author + `</p>
+                                    <p class="price">Rs`+ bookData[i].product_id.price + `</p>
+                                    <div class="addRemoveBtn mt-2" id="buttons_addRemove">
+                                        <span><button class="button button5 btnRemove " id="`+ i + `" onclick="decreaseQnty(id) ">-</button></span>
+                                        <span><button class="button  middleBtn" id="bookCount">`+ bookData[i].quantityToBuy + `</button></span>
+                                        <span><button class="button button5 btnAdd" id="`+ i + `" onclick=" increaseQnty (id);">+</button></span>
+                                        <span class="ml-3"><button class="button removeBtn" id="`+ i + `" onclick=" removeItems (id)">Remove</button></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                </div>
+                `
+
+                orderSummaryHTML += `
+                <div class="book_cart_details">
+                    <div class="bookimg">
+                        <img src="`+ path + imgArray[i] + `" alt="">
+                     </div>
+                    <div class="bookshipping">
+                        <div class="tags">
+                            <h3>`+ bookData[i].product_id.description + `</h3>
+                            <p>`+ bookData[i].product_id.author + `</p>
+                             <p class="price">Rs`+ bookData[i].product_id.price + `</p>
+                        </div>
+
+                    </div>
+                </div>
+                
+                `
+
+
             }
-        //     let cartDetailsHTML ='';
-        //     // addedBookDetails = res.data.result;
-        //     for (var i = 0; i < bookData.length; i++) {
-              
-        //         cartDetailsHTML += `<div class="bookDetails">
-        //         <div class="bookimg">
-        //             <img src="../assets/dashboard/Image 12.png" alt="">
-        //         </div>
-        //         <div class="bookshipping">
-        //             <div class="tags">
-        //             <h3 class="bookDes">`+ bookData[i].description + `</h3>
-        //             <p>`+ bookData[i].author + `</p>
-        //             <p class="price">Rs ` + bookData[i].price + `</p>
-        //                 <div class="addRemoveBtn mt-2">
-        //                     <span><button class="button button5">-</button></span>
-        //                     <span><button class="button  middleBtn">1</button></span>
-        //                     <span><button class="button button5">+</button></span>
-        //                     <span class="ml-3"><button class="button removeBtn">Remove</button></span>
-        //                 </div>
-        //             </div>
+            buttonHTML += ` 
+            <button type="button" class="btn btn-secondary btnPo" id="`+ i + `" onclick=" orderPlace(id)">Checkout</button>
+        `
+            document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`
+            document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
+            document.getElementById("orderSummary").innerHTML = orderSummaryHTML;
+            document.getElementById("orderPlaced").innerHTML = buttonHTML;
+            if (bookData.length == 0) {
+                document.getElementById('countIcon').style.display = "none";
+            } else {
+                document.getElementById('countIcon').innerHTML = bookData.length;
+            }
+            // if(bookData =="Order successfully placed!!!"){
+            //     bookData.length=0;
+            //     document.getElementById('countIcon').innerHTML = bookData.length;
+            // }
 
-        //         </div>
+            if (bookData.length !== 0) {
+                hideBtn0.style.display = "flex";
+            } else {
+                hideBtn0.style.display = "none";
+            }
 
-        //     </div>`
-        //     }
-        //     document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`
-        //     document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
-        //     getCartDetails();
-        // }
-        })    
+        })
+}
+getCartDetails();
+
+
+
+const increaseQnty = (i) => {
+
+    var selectedItem = bookData[i];
+   console.log("iddd", selectedItem)
+    console.log("qntyyy", bookData[i].quantityToBuy)
+    let data =
+    {
+        "quantityToBuy": bookData[i].quantityToBuy + 1,
+    }
+
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+    putService(`bookstore_user/cart_item_quantity/${selectedItem._id}`, data, headConfig)
+        .then(res => {
+            console.log(res);
+        })
+    console.log("quantitynow", data);
+}
+const decreaseQnty = (i) => {
+
+    var selectedItem = bookData[i];
+    var selectedQnty = bookData[i].product_id.quantity;
+
+    console.log("iddd", selectedItem)
+    console.log("qntyyy", bookData[i].product_id.quantity)
+    let data =
+    {
+        "quantityToBuy": bookData[i].quantityToBuy - 1,
+    }
+
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+
+    if (data.quantityToBuy !== 0) {
+        putService(`bookstore_user/cart_item_quantity/${selectedItem._id}`, data, headConfig)
+            .then(res => {
+                console.log(res);
+            })
+    }
+    console.log("quantitynow", data);
+}
+
+const removeItems = (i) => {
+
+    var selectedItem = bookData[i];
+    console.log("iddd", selectedItem)
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+    deleteService(`bookstore_user/remove_cart_item/${selectedItem._id}`, headConfig)
+
+        .then(res => {
+            console.log(res);
+
+        })
+
+}
+
+const saveCustomerDetails = () => {
+    var addressType;
+    var ele = document.getElementsByName('type');
+
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked)
+            addressType = ele[i].value;
+    }
+
+    const address = document.querySelector('#address');
+    const city = document.querySelector('#city');
+    const state = document.querySelector('#state');
+    console.log("type", addressType)
+    console.log("addres", address.value)
+    console.log("city", city.value)
+    console.log("state", state.value)
+    let data =
+    {
+        "addressType": addressType,
+        "fullAddress": address.value,
+        "city": city.value,
+        "state": state.value
+    }
+
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+
+    putService('bookstore_user/edit_user', data, headConfig)
+
+        .then(res => {
+            console.log(res);
+            showOrder();
+
+        })
+
+
 }
 
 
-const displayCart = (bookData) =>{
-    let cartDetailsHTML ='';
-            // addedBookDetails = res.data.result;
-            for (var i = 0; i < bookData.length; i++) {
-              
-                cartDetailsHTML += `<div class="bookDetails">
-                <div class="bookimg">
-                    <img src="`+ path + imgArray[i] + `" alt="">
-                </div>
-                <div class="bookshipping">
-                    <div class="tags">
-                    <h3 class="bookDes">`+ bookData[i].description + `</h3>
-                    <p>`+ bookData[i].author + `</p>
-                    <p class="price">Rs ` + bookData[i].price + `</p>
-                        <div class="addRemoveBtn mt-2">
-                            <span><button class="button button5">-</button></span>
-                            <span><button class="button  middleBtn">1</button></span>
-                            <span><button class="button button5">+</button></span>
-                            <span class="ml-3"><button class="button removeBtn">Remove</button></span>
-                        </div>
-                    </div>
+function showDetails() {
+    hideDetails.style.display = "block";
+    hideBtn1.style.display = "none";
+}
 
-                </div>
+function showOrder() {
+    if (fullName.value !== '') {
+        hideOrder.style.display = "block";
+        hideBtn2.style.display = "none";
+    }
+}
 
-            </div>`
-            }
-            document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`
-            document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
-            
+
+// var count = 0;
+// var btnAdd = document.querySelector(".btnAdd");
+// var btnRemove = document.querySelector(".btnRemove");
+// var disp = document.getElementById("bookCount");
+// btnAdd.onclick = function ()  {
+
+//      disp.innerHTML =  bookData[i].quantityToBuy ;
+//     count++;
+
+// }
+// btnRemove.onclick = function () {
+//     count--;
+//     // disp.innerHTML = count;
+// }
+
+
+
+function orderPlace(i) {
+    var selectedItem = bookData[i];
+    console.log("i", i)
+    let orderArr = [];
+    console.log("iddd", selectedItem)
+    for (var j = 0; j < i; j++) {
+        let orderObj = {
+            "product_id": bookData[j].product_id._id,
+            "product_name": bookData[j].product_id.bookName,
+            "product_quantity": bookData[j].product_id.quantityToBuy,
+            "product_price": bookData[j].product_id.price
+
+
         }
+        console.log("bookdata value is", bookData[j].product_id)
+        orderArr.push(orderObj);
+    }
+    console.log("orderarr", orderArr);
+    console.log("orderarr", orderArr);
+    console.log("orderarr", orderArr);
+    console.log("orderarr", orderArr);
+    let data =
+    {
+        "orders": orderArr
+    }
+
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+
+    postService('bookstore_user/add/order', data, headConfig)
+
+        .then(res => {
+            console.log(res);
+            if (res) {
+                // bookData.length =0;
+                // document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`   
+                window.location.href = 'order_success.html';
+            }
+
+        })
+    console.log("orderData", data);
+}

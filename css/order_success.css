@@ -19,6 +19,19 @@
   .float-direction-left {
     float: left;
   }
+  
+  .float-direction-right {
+    float: right;
+  }
+  .flexDir{
+    flex-direction: row;
+  }
+  .headerBlock{
+    display: block;
+  }
+  .flexBasics{
+    flex-basis: inherit;
+  }
   .headerDetails{
     font-size: 20px;
     font-weight: 300;
@@ -99,8 +112,7 @@
 
 
 .section-1 {
-    position: relative;
-    top: 8rem;
+  padding: 116px 0px 80px;
 }
  /* .mainCart{  
        display: flex;
@@ -118,13 +130,14 @@
   justify-content: center;
 }
 .imgPart2{
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+
+  justify-content: center; */
+  text-align: center;
 }
-.orderTable{
-  position: relative;
-  top: 34px;
-}
+/* .orderTable{
+ 
+} */
 .tableBody{
   height: 85px;
     border: 1px solid #DCDCDC;
@@ -151,6 +164,10 @@
 .header_title{
   font-size: 12px;
 }
+.headerTags {
+  font-size: 12px;
+  color: #f8f9fa;
+}
 .placeOrderBtn{
   display: flex;
   /* flex-direction: column-reverse; */
@@ -172,4 +189,9 @@
     color: #333232;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
+}
+@media only screen and (max-width: 992px) {
+  .searchBarIcon{
+    display: none;
+  }
 }

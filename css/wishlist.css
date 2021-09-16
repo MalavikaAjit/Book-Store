@@ -18,18 +18,19 @@ body {
 .float-direction-left {
   float: left;
 }
-.float-direction-right {
-  float: right;
-}
-.flexDir {
-  flex-direction: row;
-}
-.headerBlock {
-  display: block;
-}
-.flexBasics {
-  flex-basis: inherit;
-}
+
+  .float-direction-right {
+    float: right;
+  }
+  .flexDir{
+    flex-direction: row;
+  }
+  .headerBlock{
+    display: block;
+  }
+  .flexBasics{
+    flex-basis: inherit;
+  }
 .headerDetails {
   font-size: 20px;
   font-weight: 300;
@@ -134,6 +135,9 @@ header {
 .modal-backdrop.show {
   opacity: 0.5 !important;
 }
+/* .navbar-light .navbar-toggler-icon {
+  background-image: url(../assets/dashboard-page/person_black_24dp.svg);
+} */
 .navbar-toggler-icon {
   background-size: 75% 75%;
 }
@@ -208,7 +212,7 @@ p {
   font-weight: 500;
   margin-bottom: 0px;
   font-family: "Roboto", sans-serif;
-  line-height: 17px;
+  line-height: 2.5;
 }
 .price {
   font-size: 15px;
@@ -312,10 +316,11 @@ padding-left: 0px;
   line-height: 1.4;
   color: #0a0102;
 }
-.placeOrderBtn {
+.wishlistDeleteBtn {
   display: flex;
   flex-direction: row-reverse;
   padding: 0px 35px 24px 1px;
+  transform: translateY(-67px);
 }
 
 .mainCart {
@@ -337,92 +342,38 @@ padding-left: 0px;
   width: 65px;
   height: 85px;
 }
-/* .bookDetails{
-  margin: 41px 33px -5px;
-  
-} */
+
 .bookshipping,
 .bookimg {
   padding-top: 10px;
 }
 
 .book_cart_details {
-  display: flex;
-  margin: 23px 33px -5px;
-  border-top: 1px solid #80808047;
+    display: flex;
+    margin: 23px 33px 23px;
 }
 .tags {
   padding-left: 36px;
   padding-top: 0px;
   line-height: 2;
 }
-.btnPo {
-  background-color: #3371b5 !important;
-  text-transform: uppercase;
-  font-size: 14px;
-  /* padding: 10px 24px 12px 24px; */
-  font-family: "Lato", sans-serif;
-  width: 145px;
-}
-.text-field {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 70%;
-  margin-left: 35px;
-  margin-top: 5px;
-}
-.addressInput {
-  height: 82px;
-}
-.radioBtns p {
-  color: #0a0102;
-  font-size: 12px;
-  line-height: 2;
-}
-.radioBtns {
-  margin: 18px 24px 16px;
-  width: 100%;
-}
+
+
 .labell {
   font-size: 12px;
 }
-.hideDetails {
-  display: none;
+.myWishlist{
+    margin: 0px 0px 0px;
+    border: 1px solid #E4E4E4;
+    background-color: #F5F5F5;
 }
-.hideOrder {
-  display: none;
-}
-.badge {
-  width: 13px !important;
-  height: 11px;
-  font-size: 11px;
-  display: inline-block;
-  padding: 0px 0px;
-  font-size: 8px !important;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center !important;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 1.25rem;
-}
-.countIcon {
-  position: relative;
-  top: -16px;
-  left: -10px;
-}
-.badge-light {
-  color: #212529;
-  background-color: #f8f9fa;
-  border: 1px solid #a03037;
-}
-.addRemoveBtn {
-  display: flex;
-  align-items: center;
+.border-container{
+    margin: 0px -1px -41px;
+    border: 1px solid #E4E4E4;
+ 
 }
 @media only screen and (max-width: 992px) {
-  .searchBarIcon {
-    display: none;
+    .searchBarIcon{
+      display: none;
+    }
   }
-}

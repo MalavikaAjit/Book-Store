@@ -18,6 +18,19 @@
   .float-direction-left {
     float: left;
   }
+  
+  .float-direction-right {
+    float: right;
+  }
+  .flexDir{
+    flex-direction: row;
+  }
+  .headerBlock{
+    display: block;
+  }
+  .flexBasics{
+    flex-basis: inherit;
+  }
   .headerDetails{
     font-size: 20px;
     font-weight: 300;
@@ -172,7 +185,8 @@ p {
   /******************************************/
   .box1 {
     border: 1px solid #E2E2E2;
-    height: 294px;
+    /* height: 294px; */
+    min-height: 307px;
     /* width: 223px; */
     background-color: #ffff;
     border-radius: 2px;
@@ -257,95 +271,35 @@ p {
 .wishTo{
   color: #0A0102;
 }
-
+.badge {
+  width: 13px !important;
+  height: 11px;
+  font-size: 11px;
+  display: inline-block;
+  padding: 0px 0px;
+  font-size: 8px !important;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center !important;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 1.25rem;
+ }
+ .countIcon{
+   position: relative;
+  top: -16px;
+  left: -10px;
+}
+ .badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border: 1px solid #A03037;
+}
   /**********************/
 
   
-  @media only screen and (max-width: 1080px) and (min-width: 830px) {
-    #form-container {
-      border-radius: 8px;
-      border: 0.5px solid #d3d3d3;
-      box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
-        0 2px 6px 2px rgb(60 64 67 / 15%);
-      margin-top: 60px !important;
-      max-width: 496px;
-      transition-duration: 0.218s;
-      transition-property: background, border, opacity, box-shadow, transform;
-      transition-timing-function: ease-in;
-      position: relative;
-      left: 29px;
-      width: calc(100% - 97px);
-      margin: 0 auto;
-    }
-    .sidebar.open ~ #form-container {
-      position: relative;
-      left: 86px;
-      width: calc(100% - 255px);
+  @media only screen and (max-width: 992px) {
+    .searchBarIcon{
+      display: none;
     }
   }
-  
-  @media only screen and (max-width: 829px) and (min-width: 600px) {
-    #form-container {
-      border-radius: 8px;
-      border: 0.5px solid #d3d3d3;
-      box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
-        0 2px 6px 2px rgb(60 64 67 / 15%);
-      margin-top: 60px !important;
-      max-width: 496px;
-      transition-duration: 0.218s;
-      transition-property: background, border, opacity, box-shadow, transform;
-      transition-timing-function: ease-in;
-      position: relative;
-      left: 29px;
-      width: calc(100% - 97px);
-      margin: 0 auto;
-    }
-    .sidebar.open ~ #form-container {
-      position: relative;
-      left: 86px;
-      width: calc(100% - 255px);
-    }
-  }
-  @media only screen and (max-width: 584px) and (min-width: 359px) {
-    .sidebar.open ~ #notes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      position: relative;
-      left: 50px !important;
-      width: calc(100% - 50px) !important;
-    }
-    #form-container {
-      border-radius: 8px;
-      border: 0.5px solid #d3d3d3;
-      box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
-        0 2px 6px 2px rgb(60 64 67 / 15%);
-      margin-top: 60px !important;
-      max-width: 496px;
-      position: relative;
-      left: 23px !important;
-      width: calc(100% - 118px);
-      margin: 0 auto;
-    }
-    .sidebar.open ~ #form-container {
-      border-radius: 8px;
-      border: 0.5px solid #d3d3d3;
-      box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
-        0 2px 6px 2px rgb(60 64 67 / 15%);
-      margin-top: 60px !important;
-      max-width: 496px;
-      transition-duration: 0.218s;
-      transition-property: background, border, opacity, box-shadow, transform;
-      transition-timing-function: ease-in;
-      position: relative;
-      left: 31px !important;
-      width: calc(100% - 97px) !important;
-      margin: 0 auto;
-    }
-    .note-icons .icons_span {
-      padding: 0px 6px;
-      color: #5f6368;
-      font-size: 0px !important;
-    }
-  }
-  
