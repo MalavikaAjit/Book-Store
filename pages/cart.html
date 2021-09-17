@@ -20,8 +20,8 @@
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <div class="imageEdu">
-                        <img class="float-direction-left mr-2" onclick="location.href='../pages/dashboard.html'" src="../assets/dashboard/education.png" width="31px"
-                            height="23px" alt="" />
+                        <img class="float-direction-left mr-2" onclick="location.href='../pages/dashboard.html'"
+                            src="../assets/dashboard/education.png" width="31px" height="23px" alt="" />
                         <h2 class="mb-0 headerDetails float-direction-left">BookStore</h2>
                     </div>
                 </a>
@@ -32,10 +32,19 @@
                     </form>
                     <ul class="navbar-nav float-direction-right flexDir">
                         <li class="nav-item nav-icons mr-2">
-                            <span>
-                                <i class="fal fa-user"></i>
-                                <p class="headerTags">profile</p>
-                            </span>
+                            <div class="dropdown">
+                                <span class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fal fa-user"></i>
+                                    <p class="headerTags"> profile</p>
+                                </span>
+                                <div class="dropdown-menu positionChange" aria-labelledby="dropdownMenu2">
+                                  <button class="dropdown-item dropMenu ml-3" type="button" id="profileName">Hello Malavika </button>
+                                  <button class="dropdown-item dropMenu" type="button"> <i class="fal fa-user ml-3"></i><span class="dropMenu">Profile</span></button>
+                                  <button class="dropdown-item dropMenu" type="button"><i class="fal fa-clipboard ml-3"></i><span class="dropMenu">My orders</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="location.href='../pages/wishlist.html'"><i class="fal fa-heart ml-3"></i><span class="dropMenu">My wishlist</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="logout()"><span class="logoutBtn ml-2">Logout</span></button>
+                                </div>
+                              </div>
                         </li>
                         <li class="nav-item nav-icons mr-2">
                             <span></span>
@@ -59,12 +68,17 @@
             <div class="row">
                 <div class="col-md-10">
                     <div class="myCart-container mb-3">
-                        <div class="myCart" id="cartCount"></div>
+                        <div class="cartList">
+                            <div class="myCart" id="cartCount"></div>
+                        </div>
                         <div class="bookDetails" id="addedBooks">
+                            <!-- <div class="border-container"> -->
                             <!-- inside for loop -->
+                            <!-- </div> -->
                         </div>
                         <div class="placeOrderBtn" id="placeOrderBtn" style="display: none">
-                            <button type="button" class="btn btn-secondary btnPo" id="placeOrder"onclick="showDetails()">
+                            <button type="button" class="btn btn-secondary btnPo" id="placeOrder"
+                                onclick="showDetails()">
                                 Place order
                             </button>
                         </div>

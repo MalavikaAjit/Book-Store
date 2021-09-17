@@ -34,10 +34,19 @@
                     <ul class="navbar-nav  float-direction-right flexDir">
 
                         <li class="nav-item nav-icons mr-2">
-                            <span>
-                                <i class="fal fa-user"></i>
-                                <p class="headerTags"> profile</p>
-                            </span>
+                          <div class="dropdown">
+                                <span class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fal fa-user"></i>
+                                    <p class="headerTags"> profile</p>
+                                </span>
+                                <div class="dropdown-menu positionChange" aria-labelledby="dropdownMenu2">
+                                  <button class="dropdown-item dropMenu ml-3" type="button" id="profileName">Hello Malavika </button>
+                                  <button class="dropdown-item dropMenu" type="button"> <i class="fal fa-user ml-3"></i><span class="dropMenu">Profile</span></button>
+                                  <button class="dropdown-item dropMenu" type="button"><i class="fal fa-clipboard ml-3"></i><span class="dropMenu">My orders</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="location.href='../pages/wishlist.html'"><i class="fal fa-heart ml-3"></i><span class="dropMenu">My wishlist</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="logout()"><span class="logoutBtn ml-2">Logout</span></button>
+                                </div>
+                              </div>
                         </li>
                         <li class="nav-item nav-icons mr-2">
                             <span></span>
@@ -99,7 +108,7 @@
                       </table>
                 </div>
                 <div class="shoppingBtn text-center">
-                        <button type="button" class="btn btn-secondary btnPo" onclick="location.href='../pages/dashboardimage.html'">Continue shopping</button>
+                        <button type="button" class="btn btn-secondary btnPo" onclick="location.href='../pages/dashboard.html'">Continue shopping</button>
                 </div>
             </div>
          </div>
@@ -122,5 +131,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
+    <script src="../javascript/login-signin.js"></script>
 </body>

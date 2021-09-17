@@ -19,18 +19,18 @@ body {
   float: left;
 }
 
-  .float-direction-right {
-    float: right;
-  }
-  .flexDir{
-    flex-direction: row;
-  }
-  .headerBlock{
-    display: block;
-  }
-  .flexBasics{
-    flex-basis: inherit;
-  }
+.float-direction-right {
+  float: right;
+}
+.flexDir {
+  flex-direction: row;
+}
+.headerBlock {
+  display: block;
+}
+.flexBasics {
+  flex-basis: inherit;
+}
 .headerDetails {
   font-size: 20px;
   font-weight: 300;
@@ -349,8 +349,8 @@ padding-left: 0px;
 }
 
 .book_cart_details {
-    display: flex;
-    margin: 23px 33px 23px;
+  display: flex;
+  margin: 23px 33px 23px;
 }
 .tags {
   padding-left: 36px;
@@ -358,22 +358,46 @@ padding-left: 0px;
   line-height: 2;
 }
 
-
 .labell {
   font-size: 12px;
 }
-.myWishlist{
-    margin: 0px 0px 0px;
-    border: 1px solid #E4E4E4;
-    background-color: #F5F5F5;
+.myWishlist {
+  margin: 0px 0px 0px;
+  border: 1px solid #e4e4e4;
+  background-color: #f5f5f5;
 }
-.border-container{
-    margin: 0px -1px -41px;
-    border: 1px solid #E4E4E4;
- 
+.border-container {
+  border-bottom: 1px solid #e4e4e4;
+}
+.border-container:last-child {
+  border-bottom: none;
+}
+.addToBagBtn {
+  text-align: center;
+  transform: translateY(-5px);
+}
+.btnWidth {
+  transform: translateY(-5px);
+}
+.deleteTag {
+  display: flex;
+  padding-left: 3%;
 }
 @media only screen and (max-width: 992px) {
-    .searchBarIcon{
-      display: none;
-    }
+  .searchBarIcon {
+    display: none;
   }
+}
+@media only screen and (min-width: 360px) and (max-width: 400px) {
+  .wishlistDeleteBtn {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0px 35px 15px 0px; */
+    transform: translateY(-67px);
+    float: right;
+    padding-right: 20px;
+  }
+  .btnWidth {
+    transform: translateY(11px);
+  }
+}

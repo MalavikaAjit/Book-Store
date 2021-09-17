@@ -256,7 +256,7 @@ padding-left: 0px;
 
 /**********************/
 .section-1 {
-  margin-top: 80px;
+  padding: 100px 0px 80px;
 }
 .button5 {
   border-radius: 50%;
@@ -315,7 +315,7 @@ padding-left: 0px;
 .placeOrderBtn {
   display: flex;
   flex-direction: row-reverse;
-  padding: 0px 35px 24px 1px;
+  padding: 24px 35px 24px 1px;
 }
 
 .mainCart {
@@ -348,8 +348,7 @@ padding-left: 0px;
 
 .book_cart_details {
   display: flex;
-  margin: 23px 33px -5px;
-  border-top: 1px solid #80808047;
+  margin: 23px 33px 34px;
 }
 .tags {
   padding-left: 36px;
@@ -420,6 +419,38 @@ padding-left: 0px;
 .addRemoveBtn {
   display: flex;
   align-items: center;
+}
+.cartList {
+  margin: 0px 0px 0px;
+  border: 1px solid #e4e4e4;
+}
+.border-container {
+  border-bottom: 1px solid #e4e4e4;
+}
+.border-container:last-child {
+  border-bottom: none;
+}
+/***logout**/
+.order_heading {
+  font-size: 25px;
+  color: #333232;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.logoutBtn {
+  display: block;
+  border: 1px solid red;
+  font-size: 13px !important;
+}
+.dropMenu {
+  font-size: 13px !important;
+  padding-left: 9px;
+}
+.navbar-nav .positionChange {
+  position: absolute !important;
 }
 @media only screen and (max-width: 992px) {
   .searchBarIcon {

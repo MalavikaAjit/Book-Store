@@ -11,6 +11,7 @@ var bookData;
 let cartDetailsHTML = '';
 let orderSummaryHTML = '';
 let buttonHTML = '';
+let cartCountHTML = '';
 
 function getCartDetails() {
 
@@ -23,34 +24,38 @@ function getCartDetails() {
     getService('bookstore_user/get_cart_items', headConfig)
         .then(res => {
             // window.location.href = 'cart.html';
+            cartDetailsHTML = '';
             console.log("response ", res)
             bookData = res.data.result;
             console.log("bookData", bookData);
+            // cartCountHTML +=`  <div class="myCart" >My cart(`+bookData.length+`)</div>`
+            // document.getElementById("addedBooks").remove();
             for (var i = 0; i < bookData.length; i++) {
 
 
-                cartDetailsHTML += `             
-               
-                <div class="book_cart_details">
-                            <div class="bookimg">
-                                <img src="`+ path + imgArray[i] + `" alt="">
-                            </div>
-                            <div class="bookshipping">
-                                <div class="tags">
-                                    <h3>`+ bookData[i].product_id.description + `</h3>
-                                    <p>`+ bookData[i].product_id.author + `</p>
-                                    <p class="price">Rs`+ bookData[i].product_id.price + `</p>
-                                    <div class="addRemoveBtn mt-2" id="buttons_addRemove">
-                                        <span><button class="button button5 btnRemove " id="`+ i + `" onclick="decreaseQnty(id) ">-</button></span>
-                                        <span><button class="button  middleBtn" id="bookCount">`+ bookData[i].quantityToBuy + `</button></span>
-                                        <span><button class="button button5 btnAdd" id="`+ i + `" onclick=" increaseQnty (id);">+</button></span>
-                                        <span class="ml-3"><button class="button removeBtn" id="`+ i + `" onclick=" removeItems (id)">Remove</button></span>
-                                    </div>
-                                </div>
+                cartDetailsHTML += 
+                `<div class="border-container">`+
+                    `<div class="book_cart_details">` +
+                        `<div class="bookimg">` +
+                            ` <img src="` + path + imgArray[i] + `" alt="">` +
+                         `</div>` +
+                        `<div class="bookshipping">` +
+                            `<div class="tags">` +
+                                ` <h3>` + bookData[i].product_id.bookName + `</h3>` +
+                                `<p>` + bookData[i].product_id.author + `</p>` +
+                                ` <p class="price">Rs` + bookData[i].product_id.price + `</p>` +
+                                    `<div class="addRemoveBtn mt-2" id="buttons_addRemove">` +
+                                         ` <span><button class="button button5 btnRemove " id="` + i + `" onclick="decreaseQnty(id) ">-</button></span>` +
+                                          ` <span><button class="button  middleBtn" id="bookCount">` + bookData[i].quantityToBuy + `</button></span>` +
+                                         ` <span><button class="button button5 btnAdd" id="` + i + `" onclick=" increaseQnty (id);">+</button></span>` +
+                                         ` <span class="ml-3"><button class="button removeBtn" id="` + i + `" onclick=" removeItems (id)">Remove</button></span>` +
+                                    ` </div>` +
+                            ` </div>` +
+                        ` </div>` +
+                     `</div> ` +
+                `</div> `
+                
 
-                            </div>
-                </div>
-                `
 
                 orderSummaryHTML += `
                 <div class="book_cart_details">
@@ -59,7 +64,7 @@ function getCartDetails() {
                      </div>
                     <div class="bookshipping">
                         <div class="tags">
-                            <h3>`+ bookData[i].product_id.description + `</h3>
+                            <h3>`+ bookData[i].product_id.bookName + `</h3>
                             <p>`+ bookData[i].product_id.author + `</p>
                              <p class="price">Rs`+ bookData[i].product_id.price + `</p>
                         </div>
@@ -72,12 +77,16 @@ function getCartDetails() {
 
             }
             buttonHTML += ` 
-            <button type="button" class="btn btn-secondary btnPo" id="`+ i + `" onclick=" orderPlace(id)">Checkout</button>
-        `
-            document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`
+            <button type="button" class="btn btn-secondary btnPo" onclick=" orderPlace(${i} )">Checkout</button>`
+
+         if(window.location.href === 'http://127.0.0.1:5501/pages/cart.html'){
+            document.getElementById('cartCount').innerHTML = `My cart(` + bookData.length + `)`
             document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
             document.getElementById("orderSummary").innerHTML = orderSummaryHTML;
             document.getElementById("orderPlaced").innerHTML = buttonHTML;
+        }
+           
+          
             if (bookData.length == 0) {
                 document.getElementById('countIcon').style.display = "none";
             } else {
@@ -88,11 +97,7 @@ function getCartDetails() {
             //     document.getElementById('countIcon').innerHTML = bookData.length;
             // }
 
-            if (bookData.length !== 0) {
-                hideBtn0.style.display = "flex";
-            } else {
-                hideBtn0.style.display = "none";
-            }
+            removeDiv();
 
         })
 }
@@ -103,7 +108,7 @@ getCartDetails();
 const increaseQnty = (i) => {
 
     var selectedItem = bookData[i];
-   console.log("iddd", selectedItem)
+    console.log("iddd", selectedItem)
     console.log("qntyyy", bookData[i].quantityToBuy)
     let data =
     {
@@ -119,6 +124,7 @@ const increaseQnty = (i) => {
     putService(`bookstore_user/cart_item_quantity/${selectedItem._id}`, data, headConfig)
         .then(res => {
             console.log(res);
+            getCartDetails();
         })
     console.log("quantitynow", data);
 }
@@ -145,6 +151,7 @@ const decreaseQnty = (i) => {
         putService(`bookstore_user/cart_item_quantity/${selectedItem._id}`, data, headConfig)
             .then(res => {
                 console.log(res);
+                getCartDetails();
             })
     }
     console.log("quantitynow", data);
@@ -164,7 +171,10 @@ const removeItems = (i) => {
 
         .then(res => {
             console.log(res);
-
+            getCartDetails();
+            // removeDiv();
+            //  document.getElementById("addedBooks").remove();
+            //  hideBtn0.style.display = "none";
         })
 
 }
@@ -223,25 +233,13 @@ function showOrder() {
         hideBtn2.style.display = "none";
     }
 }
-
-
-// var count = 0;
-// var btnAdd = document.querySelector(".btnAdd");
-// var btnRemove = document.querySelector(".btnRemove");
-// var disp = document.getElementById("bookCount");
-// btnAdd.onclick = function ()  {
-
-//      disp.innerHTML =  bookData[i].quantityToBuy ;
-//     count++;
-
-// }
-// btnRemove.onclick = function () {
-//     count--;
-//     // disp.innerHTML = count;
-// }
-
-
-
+function removeDiv() {
+    if (bookData.length !== 0) {
+        hideBtn0.style.display = "flex";
+    } else {
+        hideBtn0.style.display = "none";
+    }
+}
 function orderPlace(i) {
     var selectedItem = bookData[i];
     console.log("i", i)
@@ -280,9 +278,7 @@ function orderPlace(i) {
         .then(res => {
             console.log(res);
             if (res) {
-                // bookData.length =0;
-                // document.getElementById('cartCount').innerHTML = `My cart (${bookData.length})`   
-                window.location.href = 'order_success.html';
+               window.location.href = 'order_success.html';
             }
 
         })

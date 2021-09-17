@@ -18,13 +18,14 @@ function getWishlistDetails() {
     }
     getService('bookstore_user/get_wishlist_items', headConfig)
         .then(res => {
+            wishlistItemsHTML='';
            console.log("response ", res)
             bookData = res.data.result;
             console.log("res", bookData);
            for (var i = 0; i < bookData.length; i++) {
 
                 wishlistItemsHTML += `
-                <div class="border-container">
+                <div class="border-container" id="borderBottom">
                     <div class="book_cart_details">
                         <div class="bookimg">
                             <img src="`+ path + imgArray[i] + `" alt="">
@@ -39,7 +40,12 @@ function getWishlistDetails() {
                     </div>    
                 </div>
                 <div class="wishlistDeleteBtn">
+                         <div class="deleteTag">
                                 <i class="far fa-trash-alt" id="`+ i + `" onclick="deleteWishlistItems(id)"></i>
+                          </div> 
+                          <div class="btnWidth">     
+                                <button type="button" class="btn btn-primary btn-sm " id="`+ bookData[i].product_id._id+ `" onclick="addToCart(id);">ADD TO BAG</button>
+                           </div>     
                 </div>
                 
                 `
@@ -47,7 +53,8 @@ function getWishlistDetails() {
             document.getElementById('cartCount').innerHTML = `My wishlist (${bookData.length})`
             
             document.getElementById("wishlistItems").innerHTML = wishlistItemsHTML;
-         
+
+            
         })
 }
 getWishlistDetails();
@@ -67,7 +74,36 @@ const deleteWishlistItems = (i) => {
 
         .then(res => {
             console.log(res);
+           getWishlistDetails();
 
         })
 
+}
+
+
+function addToCart(id) {
+   
+    console.log("i", id)
+    let data =
+    {
+        "product_id": id,
+    }
+
+    const headConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('accessToken')
+        }
+    }
+
+    postService(`bookstore_user/add_cart_item/${id}`, data, headConfig)
+        .then(res => {
+           
+            console.log("response of add cart",res)  
+            getWishlistDetails();  
+            
+        })
+      
+       
+     
 }

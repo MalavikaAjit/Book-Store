@@ -107,19 +107,19 @@ let data =
     "email": email.value,
     "password": password.value
   }
-//   const baseurl1 =  "https://new-bookstore-backend.herokuapp.com​​/bookstore_user/login";
-// axios.post(baseurl, data, headers)
 const headers = {
     'Content-Type': 'application/json',
 };
 postService('bookstore_user/login', data, headers)
-// axios.post(baseurl1, data, headers)
 .then(res=> {
     console.log(res)
     console.log(res.data.result)  ;     
     console.log("yaay")   ;   
     localStorage.setItem("accessToken", res.data.result.accessToken);  
-       
+    localStorage.setItem("fullName", res.result.fullName);
+    if (res) {
+        // window.location.href = 'dashboard.html';
+    }
 })
 clearLogin();
 }
@@ -141,18 +141,15 @@ function validateSignIn(){
         "password":password1.value,
         "phone": phone.value
       }
-    //   const baseurl =  "https://new-bookstore-backend.herokuapp.com/bookstore_user/registration";
-    // axios.post(baseurl, data, headers)
-    const headers = {
+   const headers = {
         'Content-Type': 'application/json',
-        // 'Authorization': localStorage.getItem('token')
     };
     postService('bookstore_user/registration', data, headers)
-    // axios.post(baseurl, data, headers)
     .then(res=> {
         console.log(res)
         console.log(res.result._id)               
             localStorage.setItem("token", res.result._id);
+            localStorage.setItem("fullName", res.result.fullName);
 })
 clearSignIn();
  }
@@ -172,3 +169,9 @@ function clearSignIn(){
    console.log("cleared signin");
     
 }
+function logout(){
+    localStorage.removeItem('accessToken');
+    window.location.href = 'index.html';
+    
+}
+// document.getElementById('profileName').innerHTML = 
