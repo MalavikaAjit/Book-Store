@@ -76,15 +76,15 @@ function getCartDetails() {
 
 
             }
-            buttonHTML += ` 
+            buttonHTML = ` 
             <button type="button" class="btn btn-secondary btnPo" onclick=" orderPlace(${i} )">Checkout</button>`
 
-         if(window.location.href === 'http://127.0.0.1:5501/pages/cart.html'){
+        
             document.getElementById('cartCount').innerHTML = `My cart(` + bookData.length + `)`
             document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
             document.getElementById("orderSummary").innerHTML = orderSummaryHTML;
             document.getElementById("orderPlaced").innerHTML = buttonHTML;
-        }
+        
            
           
             if (bookData.length == 0) {
@@ -277,9 +277,9 @@ function orderPlace(i) {
 
         .then(res => {
             console.log(res);
-            if (res) {
-               window.location.href = 'order_success.html';
-            }
+            // if (res) {
+            //    window.location.href = 'order_success.html';
+            // }
 
         })
     console.log("orderData", data);

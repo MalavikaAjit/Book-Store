@@ -74,6 +74,10 @@ body {
 .headerTags {
   font-size: 12px;
   color: #f8f9fa;
+  font-family: "Roboto";
+  font-weight: 400;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
 }
 .nav-icons {
   display: flex;
@@ -168,7 +172,7 @@ input:focus {
   font-size: 10px;
 }
 
-p {
+.tags p {
   font-family: "Roboto";
   color: #969696;
   font-weight: 400;
@@ -219,9 +223,9 @@ p {
   font-family: "Roboto", sans-serif;
 }
 .price {
-  font-size: 12px;
-  font-weight: 600;
-  color: #0a0102;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #0a0102 !important;
   font-family: "Roboto", sans-serif;
 }
 
@@ -264,12 +268,12 @@ p {
   width: 94px;
 } */
 .badge {
-  width: 13px !important;
-  height: 11px;
+  width: 15px !important;
+  height: 15px;
   font-size: 11px;
   display: inline-block;
-  padding: 0px 0px;
-  font-size: 8px !important;
+  padding: 2px 0px;
+  font-size: 10px !important;
   font-weight: 700;
   line-height: 1;
   text-align: center !important;
@@ -309,6 +313,13 @@ p {
 .navbar-nav .positionChange {
   position: absolute !important;
 }
+.buttonSmall {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.paddingTop{
+  padding-top: 11px;
+}
 /**********************/
 
 @media only screen and (max-width: 992px) {
@@ -320,4 +331,36 @@ p {
   .cartBtn {
     width: 50%;
   }
+}
+
+
+@media only screen and (max-width: 576px) {
+  .img-fluid {
+    /* max-width: 225px; */
+    height: 174px;
+    width: 150px;
+  }
+  .buttonSmall {
+    font-size: 12px;
+    line-height: 1.5;
+    width: 100%;
+}
+.tags h3 {
+  font-size: 18px;
+  
+}
+.tags p {
+ 
+  color: #969696;
+  font-weight: 400;
+  font-size: 12px;
+  
+}
+.tags  .price {
+  font-size: 15px !important;
+ 
+}
+.paddingLeft{
+  padding-left: 44px;
+}
 }

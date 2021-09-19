@@ -15,14 +15,13 @@
 
 <body>
     <header>
-
         <nav class="navbar navbar-expand-lg navbar-light header_nav fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <div class="imageEdu">
-                        <img class="float-direction-left mr-2" src="../assets/dashboard/education.png" width="31px"
-                            height="23px" alt="" />
-                        <h2 class="mb-0 headerDetails float-direction-left ">BookStore</h2>
+                        <img class="float-direction-left mr-2" onclick="location.href='../pages/dashboard.html'"
+                            src="../assets/dashboard/education.png" width="31px" height="23px" alt="" />
+                        <h2 class="mb-0 headerDetails float-direction-left">BookStore</h2>
                     </div>
                 </a>
                 <div class="collapse navbar-collapse float-direction-right headerBlock flexBasics">
@@ -30,40 +29,29 @@
                         <input class="form-control mr-sm-2 searchInput" type="search" placeholder="Search"
                             aria-label="Search" />
                     </form>
-                    <ul class="navbar-nav  float-direction-right flexDir">
-
+                    <ul class="navbar-nav float-direction-right flexDir ">
                         <li class="nav-item nav-icons mr-2">
                             <div class="dropdown">
-                                <span class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="dropdown-toggle paddingLeft" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fal fa-user"></i>
                                     <p class="headerTags"> profile</p>
                                 </span>
                                 <div class="dropdown-menu positionChange" aria-labelledby="dropdownMenu2">
-                                    <button class="dropdown-item dropMenu ml-3" type="button" id="profileName">Hello
-                                        malavika </button>
-                                    <button class="dropdown-item dropMenu" type="button"> <i
-                                            class="fal fa-user ml-3"></i><span class="dropMenu">profile</span></button>
-                                    <button class="dropdown-item dropMenu" type="button"><i
-                                            class="fal fa-clipboard ml-3"></i><span class="dropMenu">My
-                                            orders</span></button>
-                                    <button class="dropdown-item dropMenu" type="button"
-                                        onclick="location.href='../pages/wishlist.html'"><i
-                                            class="fal fa-heart ml-3"></i><span class="dropMenu">My
-                                            wishlist</span></button>
-                                    <button class="dropdown-item dropMenu" type="button"><span
-                                            class="logoutBtn ml-2">Logout</span></button>
+                                  <button class="dropdown-item dropMenu ml-3" type="button" id="profileName">Hello Malavika </button>
+                                  <button class="dropdown-item dropMenu" type="button"> <i class="fal fa-user ml-3"></i><span class="dropMenu">Profile</span></button>
+                                  <button class="dropdown-item dropMenu" type="button"><i class="fal fa-clipboard ml-3"></i><span class="dropMenu">My orders</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="location.href='../pages/wishlist.html'"><i class="fal fa-heart ml-3"></i><span class="dropMenu">My wishlist</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="logout()"><span class="logoutBtn ml-2">Logout</span></button>
                                 </div>
-                            </div>
+                              </div>
                         </li>
                         <li class="nav-item nav-icons mr-2">
                             <span></span>
                         </li>
                         <li class="nav-item nav-icons mr-2">
                             <span onclick="getCartDetails();location.href='../pages/cart.html'">
-
                                 <i class="fal fa-shopping-cart"></i>
-                                <p class="headerTags"> cart</p>
+                                <p class="headerTags">cart</p>
                             </span>
                             <div class="countIcon">
                                 <span class="badge badge-light" id="countIcon"></span>
@@ -73,7 +61,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <section class="section-1">
         <div class="container mt-5 gallery-container">

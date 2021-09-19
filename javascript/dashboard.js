@@ -32,10 +32,10 @@ function getBookDetails() {
               <div class="lastBtn" id="addWish_`+ bookDetails[i]._id + `">
               <div class="row">
                   <div class="col-sm-6 addToBagBtn cartBtn">
-                        <button type="button" class="btn btn-primary btn-sm btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToCart(` + i + `,id);">ADD TO BAG</button>
+                        <button type="button" class="btn btn-primary buttonSmall btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToCart(` + i + `,id);">ADD TO BAG</button>
                   </div>
                   <div class="col-sm-6 wishlistBtn cartBtn text-right">
-                      <button type="button" class="btn btn-secondary  btn-sm wishTo btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToWishlist(` + i + `,id)">WISHLIST</button>
+                      <button type="button" class="btn btn-secondary buttonSmall wishTo btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToWishlist(` + i + `,id)">WISHLIST</button>
                   </div>
               </div>
               </div>
