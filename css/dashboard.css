@@ -1,62 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
-.searchInput {
-  width: 600px !important;
-  background: #f1f3f4;
-  border: none;
-}
-.icon_flex {
-  display: flex;
-  align-items: center;
-}
-.float-direction-left {
-  float: left;
-}
 
-.float-direction-right {
-  float: right;
-}
-.flexDir {
-  flex-direction: row;
-}
-.headerBlock {
-  display: block;
-}
-.flexBasics {
-  flex-basis: inherit;
-}
-.headerDetails {
-  font-size: 20px;
-  font-weight: 300;
-  color: #ffffff;
-}
-.footerDetails {
-  font-size: 12px;
-  font-weight: 300;
-  color: #ffffff;
-  margin-left: 12px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-.header_nav {
-  height: 60px;
-  background-color: #a03037;
-  border-bottom: 1px solid #d0d0d0;
-}
-.footer_nav {
-  height: 50px;
-  background-color: #2e1d1e;
-  border-bottom: 1px solid #d0d0d0;
-}
-.searchBarIcon {
-  width: 490px;
-  padding-left: 17px;
-}
 .books {
   font-size: 25px;
   font-weight: 500;
@@ -71,101 +13,20 @@ body {
   font-size: 12px;
   padding-top: 12px;
 }
-.headerTags {
-  font-size: 12px;
-  color: #f8f9fa;
-  font-family: "Roboto";
-  font-weight: 400;
-  margin-bottom: 0px;
-  font-family: "Roboto", sans-serif;
-}
-.nav-icons {
-  display: flex;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  align-items: center;
-  cursor: pointer;
-  color: #fff;
-}
-.nav-icons:hover {
-  opacity: 0.87;
-  background-color: rgba(205, 216, 230, 0.157);
-}
-.nav-icons span {
-  text-align: center;
-  width: 100%;
-  font-size: 16px;
-}
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2em;
-}
-
-.header-logo {
-  height: 4em;
-}
-
-.header-title {
-  color: #5f6368;
-  font-size: 2rem;
-  padding-top: 4px;
-  padding-left: 4px;
-}
 
 #form:focus,
 input:focus {
   outline: none;
 }
 
-.note-icons {
-  padding-left: 17px;
-  padding-top: 10px;
-}
-.note-icons .icons_span {
-  padding: 0px 10px;
-  color: #5f6368;
-  font-size: 18px !important;
-}
-.note-icons .material-icons {
-  font-size: 18px !important;
-  cursor: pointer;
-}
-.note-icons .icons_span:first-child {
-  padding: 0px !important;
-}
-.note-icons .icons_span:last-child {
-  padding: 0px !important;
-}
-.modal-backdrop.show {
-  opacity: 0.5 !important;
-}
-.navbar-light .navbar-toggler-icon {
-  background-image: url(../assets/dashboard-page/person_black_24dp.svg);
-}
-.navbar-toggler-icon {
-  background-size: 75% 75%;
-}
-.navbar-light .navbar-toggler {
-  border: none;
-}
+
 /**************/
 .box-section-container {
   /* display: flex;
     flex-flow: row nowrap; */
   margin-top: 150px;
   /* padding: 7px; */
-}
-
-.footer-nav {
-  position: relative;
-  bottom: 0px;
-  width: 100%;
-  background-color: #2e1d1e;
-  padding: 10px 0px;
 }
 
 .bookDes {
@@ -202,18 +63,13 @@ input:focus {
 .gallery-margin h1 {
   font-size: 18px;
 }
-/* .imageEdu{
-    background: url('../assets/dashboard/education.png') 0% 0% no-repeat padding-box;
-  } */
+
 .img-fluid {
   max-width: 100%;
   height: 139px;
-  /* position: relative;
-    top: 20px;
-    left: 52px; */
-}
+ }
 .tags {
-  /* padding-left: 17px; */
+  
   padding-top: 12px;
 }
 .tags h3 {
@@ -241,12 +97,7 @@ input:focus {
   /* padding-right: 34px; */
   padding-top: 7px;
 }
-/* .addToBagBtn{
-  padding-left: 0px;
-} */
-/* .wishlistBtn{
-  padding-left: 0px;
-} */
+
 .btn-primary {
   color: #fff;
   background-color: #a30e1d;
@@ -264,33 +115,7 @@ input:focus {
 .wishTo {
   color: #0a0102;
 }
-/* .btnWidth{
-  width: 94px;
-} */
-.badge {
-  width: 15px !important;
-  height: 15px;
-  font-size: 11px;
-  display: inline-block;
-  padding: 2px 0px;
-  font-size: 10px !important;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center !important;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 1.25rem;
-}
-.countIcon {
-  position: relative;
-  top: -16px;
-  left: -10px;
-}
-.badge-light {
-  color: #212529;
-  background-color: #f8f9fa;
-  border: 1px solid #a03037;
-}
+
 /******logout****/
 .order_heading {
   font-size: 25px;
@@ -298,21 +123,7 @@ input:focus {
   font-family: "Lato", sans-serif;
   font-weight: bold;
 }
-.dropdown-toggle::after {
-  display: none;
-}
-.logoutBtn {
-  display: block;
-  border: 1px solid red;
-  font-size: 13px !important;
-}
-.dropMenu {
-  font-size: 13px !important;
-  padding-left: 9px;
-}
-.navbar-nav .positionChange {
-  position: absolute !important;
-}
+
 .buttonSmall {
   font-size: 11px;
   line-height: 1.5;

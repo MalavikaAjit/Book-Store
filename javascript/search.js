@@ -2,26 +2,30 @@ var imgArray = ["Image 36.png", "Image 13.png", "Image 12.png", "Image 14.png", 
 var path = "../assets/dashboard/";
 var bookDetails;
 let detailsHTML = '';
-
+var books;
 var bookData = '';
-// function searching(){
-//     getBookDetails();
-// }
+function searching() {
+    books = document.getElementById('searchBook').value
+    getBookDetails(books);
+    
+}
 
-function getBookDetails() {
+function getBookDetails(books = '') {
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('accessToken')
     };
     getService('bookstore_user/get/book', headers)
         .then(res => {
+
+            console.log("book typed", books);
             console.log("res", res.data.result);
-            bookDetails = res.data.result;
-            for (var i = 0; i < bookDetails.length; i++) {
-                var lastBtn = "lastBtn" + bookDetails[i]._id;
-                var add_item = "addTo" + bookDetails[i]._id;
-                var wish = "wishTo" + bookDetails[i]._id;
-                detailsHTML += `<div class="col-lg-3 col-md-4 col-sm-6 pt-3  pb-3 gallery-margin">
+            bookDetails = res.data.result;           
+                detailsHTML = '';
+                for (var i = 0; i < bookDetails.length; i++) {
+                    if ((bookDetails[i].bookName.toLowerCase()).includes(books.toLowerCase())) {
+                        console.log("matching ", (bookDetails[i].bookName).includes(books))
+                        detailsHTML += `<div class="col-lg-3 col-md-4 col-sm-6 pt-3  pb-3 gallery-margin">
             <div class="box1">
                 <div class="img-box">
                     <img class="img-fluid" src="`+ path + imgArray[i] + `" alt="">
@@ -49,11 +53,17 @@ function getBookDetails() {
                 </div>
             </div>
         </div>`
-            }
-            document.getElementById('bookCount').innerHTML = `Books (${bookDetails.length})`
-            document.getElementById("bookList").innerHTML = detailsHTML;
+       
+                    }
+                    document.getElementById('bookCount').innerHTML = `Books (${bookDetails.length})`
+                    document.getElementById("bookList").innerHTML = detailsHTML;
+                }
+              
+            })
+}
 
-        })
+if(books ==''){
+    getBookDetails();
 }
 
 
@@ -130,16 +140,21 @@ function getCartDetails() {
         .then(res => {
 
             bookData = res.data.result;
+            // if (bookData.length > 0) {
+            //     document.getElementById('countIcon').innerHTML = bookData.length;
+            // } else {
+            //     document.getElementById('countIcon').style.display = "none";
 
-            document.getElementById("countIcon").innerHTML = bookData.length > 0 ? bookData.length : "";
-
+            // }
 
             // document.getElementById("addedBooks").innerHTML = cartDetailsHTML;     
 
-
+            document.getElementById("countIcon").innerHTML = bookData.length > 0 ? bookData.length : "";
 
         })
-         
+
 }
 getCartDetails();
+
+
 

@@ -1,184 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
-.searchInput {
-  width: 600px !important;
-  background: #f1f3f4;
-  border: none;
-}
-.icon_flex {
-  display: flex;
-  align-items: center;
-}
-.float-direction-left {
-  float: left;
-}
 
-.float-direction-right {
-  float: right;
-}
-.flexDir {
-  flex-direction: row;
-}
-.headerBlock {
-  display: block;
-}
-.flexBasics {
-  flex-basis: inherit;
-}
-.headerDetails {
-  font-size: 20px;
-  font-weight: 300;
-  color: #ffffff;
-}
-.footerDetails {
-  font-size: 12px;
-  font-weight: 300;
-  color: #ffffff;
-  margin-left: 12px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-.header_nav {
-  height: 60px;
-  background-color: #a03037;
-  border-bottom: 1px solid #d0d0d0;
-}
-/* .footer_nav{
-  height: 50px;
-  background-color: #2E1D1E;
-  border-bottom: 1px solid #d0d0d0;
-} */
-.searchBarIcon {
-  width: 490px;
-  padding-left: 17px;
-}
-.books {
-  font-size: 25px;
-  font-weight: 500;
-  color: #0a0102;
-}
-.heading {
-  display: flex;
-  flex-direction: column;
-}
-.sort {
-  float: right;
-  font-size: 12px;
-  padding-top: 12px;
-}
-.headerTags {
-  font-size: 12px;
-  color: #f8f9fa;
-
-    font-family: "Roboto";
-    
-    font-weight: 400;
-    
-    margin-bottom: 0px;
-    font-family: "Roboto", sans-serif;
-}
-.nav-icons {
-  display: flex;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  align-items: center;
-  cursor: pointer;
-  color: #fff;
-}
-.nav-icons:hover {
-  opacity: 0.87;
-  background-color: rgba(205, 216, 230, 0.157);
-}
-.nav-icons span {
-  text-align: center;
-  width: 100%;
-  font-size: 16px;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2em;
-}
-
-.header-logo {
-  height: 4em;
-}
-
-.header-title {
-  color: #5f6368;
-  font-size: 2rem;
-  padding-top: 4px;
-  padding-left: 4px;
-}
-
-.note-icons {
-  padding-left: 17px;
-  padding-top: 10px;
-}
-.note-icons .icons_span {
-  padding: 0px 10px;
-  color: #5f6368;
-  font-size: 18px !important;
-}
-.note-icons .material-icons {
-  font-size: 18px !important;
-  cursor: pointer;
-}
-.note-icons .icons_span:first-child {
-  padding: 0px !important;
-}
-.note-icons .icons_span:last-child {
-  padding: 0px !important;
-}
-.modal-backdrop.show {
-  opacity: 0.5 !important;
-}
-/* .navbar-light .navbar-toggler-icon {
-  background-image: url(../assets/dashboard-page/person_black_24dp.svg);
-} */
-.navbar-toggler-icon {
-  background-size: 75% 75%;
-}
-.navbar-light .navbar-toggler {
-  border: none;
-}
-/**************/
-.box-section-container {
-  /* display: flex;
-  flex-flow: row nowrap; */
-  margin-top: 150px;
-  /* padding: 7px; */
-}
-
-.footer-nav {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background-color: #2e1d1e;
-  padding: 10px 0px;
-}
 
 .bookDes {
   font-size: 10px;
 }
 
-p {
-  font-family: "Roboto";
-  color: #969696;
-  font-weight: 400;
-  font-size: 10px;
-  margin-bottom: 0px;
-  font-family: "Roboto", sans-serif;
-}
+
 
 /******************************************/
 .box1 {
@@ -210,16 +36,15 @@ p {
   top: 20px;
   left: 52px; */
 }
-.tags {
-  padding-left: 17px;
-  padding-top: 12px;
+.flex-grow-1{
+  flex-grow: 1 !important;
 }
+
 .tags h3 {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 0px;
   font-family: "Roboto", sans-serif;
-  line-height: 2.5;
 }
 .price {
   font-size: 15px;
@@ -355,16 +180,6 @@ padding-left: 0px;
   padding-top: 10px;
 }
 
-.book_cart_details {
-  display: flex;
-  margin: 23px 33px 23px;
-}
-.tags {
-  padding-left: 36px;
-  padding-top: 0px;
-  line-height: 2;
-}
-
 .labell {
   font-size: 12px;
 }
@@ -375,23 +190,22 @@ padding-left: 0px;
 }
 .border-container {
   border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  padding: 23px 33px 23px;
 }
-.border-container:last-child {
-  border-bottom: none;
+.border-container .flex-grow-0{
+  align-items: center;
+}
+.bookDetails .border-container:last-child{
+  border: none !important;
 }
 .addToBagBtn {
   text-align: center;
   transform: translateY(-5px);
   cursor: pointer;
 }
-.btnWidth {
-  transform: translateY(-5px);
-}
-.deleteTag {
-  display: flex;
-  padding-left: 3%;
-  cursor: pointer;
-}
+
+
 @media only screen and (max-width: 992px) {
   .searchBarIcon {
     display: none;
@@ -405,9 +219,6 @@ padding-left: 0px;
     transform: translateY(-67px);
     float: right;
     padding-right: 20px;
-  }
-  .btnWidth {
-    transform: translateY(11px);
   }
 }
 @media only screen and (max-width: 576px) {
