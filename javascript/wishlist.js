@@ -26,7 +26,7 @@ function getWishlistDetails() {
 
                 wishlistItemsHTML += `
                 <div class="border-container" id="borderBottom">
-                    <div class="mr-3">
+                    <div class="mr-3 marginRight">
                        
                             <img width=65px; src="`+ path + imgArray[i] + `" alt="">
                     </div>  
@@ -146,7 +146,7 @@ function getCartDetails() {
 
             bookData = res.data.result;
 
-            document.getElementById('countIcon').innerHTML = bookData.length;
+            document.getElementById("countIcon").innerHTML = bookData.length > 0 ? bookData.length : "";
 
 
             // document.getElementById("addedBooks").innerHTML = cartDetailsHTML;     

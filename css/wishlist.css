@@ -1,10 +1,6 @@
-
-
 .bookDes {
   font-size: 10px;
 }
-
-
 
 /******************************************/
 .box1 {
@@ -36,7 +32,7 @@
   top: 20px;
   left: 52px; */
 }
-.flex-grow-1{
+.flex-grow-1 {
   flex-grow: 1 !important;
 }
 
@@ -193,10 +189,10 @@ padding-left: 0px;
   display: flex;
   padding: 23px 33px 23px;
 }
-.border-container .flex-grow-0{
+.border-container .flex-grow-0 {
   align-items: center;
 }
-.bookDetails .border-container:last-child{
+.bookDetails .border-container:last-child {
   border: none !important;
 }
 .addToBagBtn {
@@ -205,25 +201,74 @@ padding-left: 0px;
   cursor: pointer;
 }
 
-
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .searchBarIcon {
     display: none;
   }
 }
-@media only screen and (min-width: 360px) and (max-width: 400px) {
+/* @media only screen and (min-width: 360px) and (max-width: 400px) {
   .wishlistDeleteBtn {
     display: flex;
     flex-direction: column;
-    /* padding: 0px 35px 15px 0px; */
+   
     transform: translateY(-67px);
     float: right;
     padding-right: 20px;
   }
-}
-@media only screen and (max-width: 576px) {
+} */
+/* @media only screen and (max-width: 576px) {
   
   .paddingLeft{
     padding-left: 44px;
   }
+  } */
+
+@media only screen and (max-width: 400px) {
+  .placeOrderBtn {
+    text-align: center !important;
+    padding: 0px 0px 24px 1px;
   }
+  .bookimg img {
+    width: 74px;
+    height: 86px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  .tags {
+    padding-left: 8px;
+  }
+  .marginTop {
+    margin-top: 0.5rem !important;
+  }
+  .border-container {
+    padding: 23px 16px 23px;
+  }
+  .nav-icons {
+    margin-right: 0.5rem !important;
+  }
+  .navbar-nav .positionChange {
+    left: -52px;
+  }
+  .marginRight {
+    margin-right: 0.5rem !important;
+  }
+  .price {
+    font-size: 13px;
+  }
+  .tags h3 {
+    font-size: 12px;
+  }
+  .btn-sm {
+    font-size: 9px;
+  }
+}
+@media only screen and (min-width: 400px) and(max-width:600px) {
+  .navbar-nav .positionChange {
+    left: -21px !important;
+  }
+  /* .searchInput {
+      display: none !important;
+    } */
+}

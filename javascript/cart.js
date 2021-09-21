@@ -235,7 +235,7 @@ function showOrder() {
 }
 function removeDiv() {
     if (bookData.length !== 0) {
-        hideBtn0.style.display = "flex";
+        hideBtn0.style.display = "block";
     } else {
         hideBtn0.style.display = "none";
     }
