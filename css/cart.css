@@ -364,8 +364,16 @@ p {
 .navbar-nav .positionChange {
   left: -52px;
 }
+.btnPo {
+  font-size: 12px;
+  width: 125px;
 }
-@media only screen and (min-width: 400px) and(max-width:600px){
+.form-control {
+ 
+  font-size: 13px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width:600px){
   .paddingLeft{
     padding-left: 44px;
   }

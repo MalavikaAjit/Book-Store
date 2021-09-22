@@ -28,26 +28,23 @@
                 <div class="collapse navbar-collapse float-direction-right headerBlock flexBasics">
                     <form class="form-inline my-2 my-lg-0 mr-auto searchBarIcon">
                         <input class="form-control mr-sm-2 searchInput" type="search" placeholder="Search"
-                            aria-label="Search" id="searchBook" oninput="searching()" />
+                            aria-label="Search" />
                     </form>
                     <ul class="navbar-nav float-direction-right flexDir ">
-                        <li class="nav-item nav-icons mr-2">
+                        <li class="nav-item nav-icons mr-5">
                             <div class="dropdown">
                                 <span class="dropdown-toggle paddingLeft" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fal fa-user"></i>
                                     <p class="headerTags"> profile</p>
                                 </span>
                                 <div class="dropdown-menu positionChange" aria-labelledby="dropdownMenu2">
-                                    <button class="dropdown-item dropMenu " type="button" id="profileName">Hello Malavika </button>
-                                    <button class="dropdown-item dropMenu" type="button"> <i class="fal fa-user mr-2"></i><span class="">Profile</span></button>
-                                    <button class="dropdown-item dropMenu" type="button"><i class="fal fa-clipboard mr-2"></i><span class="">My orders</span></button>
-                                    <button class="dropdown-item dropMenu" type="button" onclick="location.href='../pages/wishlist.html'"><i class="fal fa-heart mr-2"></i><span class="">My wishlist</span></button>
-                                    <button class="dropdown-item dropMenu" type="button" onclick="logout()"><span class="logoutBtn ">Logout</span></button>
-                                  </div>
+                                  <button class="dropdown-item dropMenu " type="button" id="profileName">Hello Malavika </button>
+                                  <button class="dropdown-item dropMenu" type="button"> <i class="fal fa-user mr-2"></i><span class="">Profile</span></button>
+                                  <button class="dropdown-item dropMenu" type="button"><i class="fal fa-clipboard mr-2"></i><span class="">My orders</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="location.href='../pages/wishlist.html'"><i class="fal fa-heart mr-2"></i><span class="">My wishlist</span></button>
+                                  <button class="dropdown-item dropMenu" type="button" onclick="logout()"><span class="logoutBtn ">Logout</span></button>
+                                </div>
                               </div>
-                        </li>
-                        <li class="nav-item nav-icons mr-2">
-                            <span></span>
                         </li>
                         <li class="nav-item nav-icons mr-2">
                             <span onclick="getCartDetails();location.href='../pages/cart.html'">
@@ -102,7 +99,7 @@
 
     <script src="../service/service.js"></script>
     <script src="../javascript/cart.js"></script>
-    <script src="../javascript/search.js"></script>
+    <script src="../javascript/dashboard.js"></script>
 
 
 </body>

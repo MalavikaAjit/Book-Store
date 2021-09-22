@@ -249,7 +249,7 @@ padding-left: 0px;
     margin-right: 0.5rem !important;
   }
   .navbar-nav .positionChange {
-    left: -52px;
+    left: -52px !important;
   }
   .marginRight {
     margin-right: 0.5rem !important;
@@ -263,12 +263,58 @@ padding-left: 0px;
   .btn-sm {
     font-size: 9px;
   }
+  .myCart {
+   font-size: 16px;
+   
 }
-@media only screen and (min-width: 400px) and(max-width:600px) {
+.headerDetails {
+  font-size: 18px;
+  
+}
+
+ 
+}
+@media only screen  and (max-width: 600px) {
   .navbar-nav .positionChange {
-    left: -21px !important;
+    left: -21px;
+  }
+  .headerDetails {
+    font-size: 18px;
+    
+  }
+  .marginRight {
+    margin-right: 0.5rem !important;
   }
   /* .searchInput {
       display: none !important;
     } */
+}
+@media only screen and (min-width: 760px) and (max-width: 1100px) {
+  .bookDetails{
+  padding-top: 20px;
+  }
+  .deleteTag i{
+    font-size: 23px;
+  }
+  .btn-sm {
+    font-size: 13px;
+  }
+  .tags h3{
+    font-size: 20px;
+  }
+  .tags p {
+    font-size: 18px;
+  }
+  .price{
+    font-size: 20px;
+  }
+  .myCart{
+    font-size: 23px;
+  }
+  .footerDetails {
+    font-size: 19px;
+    margin-left: 12px;
+    padding-top: 5px !important;
+    padding-bottom: 8px !important;
+}
 }

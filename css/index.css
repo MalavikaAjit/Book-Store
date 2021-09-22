@@ -204,7 +204,7 @@ label{
     overflow: hidden;
 }
 
-@media only screen and (max-width: 604px) {
+@media only screen and (max-width: 600px) {
     .shopping-cart-div{
         display:none;
         width:0;
@@ -272,7 +272,7 @@ label{
         transform: translateY(0rem);
     }
 }
-@media only screen and (min-width: 604px) and (max-width: 820px) {
+@media only screen and (min-width: 600px) and (max-width: 1100px) {
 
     .space button {
         margin-top: 0px;
