@@ -138,6 +138,9 @@
   .navbar-nav .positionChange {
     left: -21px;
   }
+  .section-1{
+    padding: 77px 0px 55px;
+  }
 }
 
 @media only screen and (max-width: 320px) {

@@ -24,6 +24,7 @@ function getCartDetails() {
     getService('bookstore_user/get_cart_items', headConfig)
         .then(res => {
             // window.location.href = 'cart.html';
+            orderSummaryHTML = '';
             cartDetailsHTML = '';
             console.log("response ", res)
             bookData = res.data.result;
@@ -31,8 +32,6 @@ function getCartDetails() {
             // cartCountHTML +=`  <div class="myCart" >My cart(`+bookData.length+`)</div>`
             // document.getElementById("addedBooks").remove();
             for (var i = 0; i < bookData.length; i++) {
-
-
                 cartDetailsHTML += 
                 `<div class="border-container">`+
                     `<div class="book_cart_details">` +
@@ -82,7 +81,7 @@ function getCartDetails() {
         
             document.getElementById('cartCount').innerHTML = `My cart(` + bookData.length + `)`
             document.getElementById("addedBooks").innerHTML = cartDetailsHTML;
-            document.getElementById("orderSummary").innerHTML = orderSummaryHTML;
+            document.getElementById("orderSummary").innerHTML =  orderSummaryHTML ;
             document.getElementById("orderPlaced").innerHTML = buttonHTML;
         
            
@@ -92,11 +91,7 @@ function getCartDetails() {
             } else {
                 document.getElementById('countIcon').innerHTML = bookData.length;
             }
-            // if(bookData =="Order successfully placed!!!"){
-            //     bookData.length=0;
-            //     document.getElementById('countIcon').innerHTML = bookData.length;
-            // }
-
+          
             removeDiv();
 
         })
@@ -277,9 +272,9 @@ function orderPlace(i) {
 
         .then(res => {
             console.log(res);
-            // if (res) {
-            //    window.location.href = 'order_success.html';
-            // }
+            if (res) {
+               window.location.href = 'order_success.html';
+            }
 
         })
     console.log("orderData", data);
