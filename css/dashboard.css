@@ -23,10 +23,7 @@ input:focus {
 
 /**************/
 .box-section-container {
-  /* display: flex;
-    flex-flow: row nowrap; */
-  margin-top: 150px;
-  /* padding: 7px; */
+   margin-top: 150px;
 }
 
 .bookDes {
@@ -45,10 +42,8 @@ input:focus {
 /******************************************/
 .box1 {
   border: 1px solid #e2e2e2;
-  /* height: 294px; */
-  min-height: 295px;
-  /* width: 223px; */
-  background-color: #ffff;
+    min-height: 295px;
+    background-color: #ffff;
   border-radius: 2px;
 }
 
@@ -91,10 +86,7 @@ input:focus {
 }
 .lastBtn {
   border-radius: 3px;
-  /* padding: 5px; */
-  font-size: 15px;
-
-  /* padding-right: 34px; */
+   font-size: 15px;
   padding-top: 7px;
 }
 

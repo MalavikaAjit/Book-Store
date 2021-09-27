@@ -2,58 +2,64 @@ var imgArray = ["Image 36.png", "Image 13.png", "Image 12.png", "Image 14.png", 
 var path = "../assets/dashboard/";
 var bookDetails;
 let detailsHTML = '';
-
+var books;
 var bookData = '';
-// function searching(){
-//     getBookDetails();
-// }
+function searching() {
+    books = document.getElementById('searchBook').value
+    getBookDetails(books);
+    
+}
 
-function getBookDetails() {
+function getBookDetails(books = '') {
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('accessToken')
     };
     getService('bookstore_user/get/book', headers)
         .then(res => {
+
+            console.log("book typed", books);
             console.log("res", res.data.result);
-            bookDetails = res.data.result;
-            for (var i = 0; i < bookDetails.length; i++) {
-                var lastBtn = "lastBtn" + bookDetails[i]._id;
-                var add_item = "addTo" + bookDetails[i]._id;
-                var wish = "wishTo" + bookDetails[i]._id;
-                detailsHTML += `<div class="col-lg-3 col-md-4 col-sm-6 pt-3  pb-3 gallery-margin">
-            <div class="box1">
-                <div class="img-box">
-                    <img class="img-fluid" src="`+ path + imgArray[i] + `" alt="">
-                </div>
-              <div class="container">
-              <div class="tags">
-              <h3 class="bookDes">`+ bookDetails[i].bookName + `</h3>
-              <p>`+ bookDetails[i].author + `</p>
-              <p class="price">Rs ` + bookDetails[i].price + `</p>
-              <div class="lastBtn" id="addWish_`+ bookDetails[i]._id + `">
-              <div class="row">
-                  <div class="col-sm-6 addToBagBtn cartBtn">
-                        <button type="button" class="btn btn-primary buttonSmall btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToCart(` + i + `,id);">ADD TO BAG</button>
-                  </div>
-                  <div class="col-sm-6 wishlistBtn cartBtn text-right">
-                      <button type="button" class="btn btn-secondary buttonSmall wishTo btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToWishlist(` + i + `,id)">WISHLIST</button>
-                  </div>
-              </div>
-              </div>
-             
+            bookDetails = res.data.result;           
+                detailsHTML = '';
+                for (var i = 0; i < bookDetails.length; i++) {
+                    if ((bookDetails[i].bookName.toLowerCase()).includes(books.toLowerCase())) {
+                        console.log("matching ", (bookDetails[i].bookName).includes(books))
+                        detailsHTML += `<div class="col-lg-3 col-md-4 col-sm-6 pt-3  pb-3 gallery-margin">
+                                             <div class="box1">
+                                                <div class="img-box">
+                                                     <img class="img-fluid" src="`+ path + imgArray[i] + `" alt="">
+                                                </div>
+                                                <div class="container">
+                                                    <div class="tags">
+                                                        <h3 class="bookDes">`+ bookDetails[i].bookName + `</h3>
+                                                        <p>`+ bookDetails[i].author + `</p>
+                                                        <p class="price">Rs ` + bookDetails[i].price + `</p>
+                                                        <div class="lastBtn" id="addWish_`+ bookDetails[i]._id + `">
+                                                            <div class="row">
+                                                                <div class="col-sm-6 addToBagBtn cartBtn">
+                                                                    <button type="button" class="btn btn-primary buttonSmall btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToCart(` + i + `,id);">ADD TO BAG</button>
+                                                                </div>
+                                                                <div class="col-sm-6 wishlistBtn cartBtn text-right">
+                                                                    <button type="button" class="btn btn-secondary buttonSmall wishTo btnWidth" id="`+ bookDetails[i]._id + `" onclick="addToWishlist(` + i + `,id)">WISHLIST</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>`
+       
+                    }
+                    document.getElementById('bookCount').innerHTML = `Books (${bookDetails.length})`
+                    document.getElementById("bookList").innerHTML = detailsHTML;
+                }
+              
+            })
+}
 
-          </div>
-              </div>
-                    
-                </div>
-            </div>
-        </div>`
-            }
-            document.getElementById('bookCount').innerHTML = `Books (${bookDetails.length})`
-            document.getElementById("bookList").innerHTML = detailsHTML;
-
-        })
+if(books ==''){
+    getBookDetails();
 }
 
 
@@ -130,16 +136,13 @@ function getCartDetails() {
         .then(res => {
 
             bookData = res.data.result;
-
+            
             document.getElementById("countIcon").innerHTML = bookData.length > 0 ? bookData.length : "";
 
-
-            // document.getElementById("addedBooks").innerHTML = cartDetailsHTML;     
-
-
-
         })
-         
+
 }
 getCartDetails();
+
+
 

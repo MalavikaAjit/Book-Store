@@ -199,39 +199,3 @@ header {
   padding: 10px 0px;
 }
 
-
-/* @media only screen and (min-width: 360px)and (max-width: 400px)  {
-  .placeOrderBtn {
-    text-align: center !important;
-  }
-  .bookimg img {
-    width: 83px;
-    height: 101px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 0px;
-  }
-  .tags {
-    padding-left: 19px;
-    padding-top: 0px;
-    line-height: 2;
-  }
-  .mt-2, .my-2 {
-    margin-top: 0px !important;
-  }
-}
-@media only screen and (min-width: 450px) and(max-width:600px){
-  .paddingLeft{
-    padding-left: 44px;
-  }
-  .searchInput {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 760px) and(max-width:1100px){
-  .searchInput {
-    display: none !important;
-  }
-} */

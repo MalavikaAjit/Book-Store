@@ -27,28 +27,21 @@ function getWishlistDetails() {
                 wishlistItemsHTML += `
                 <div class="border-container" id="borderBottom">
                     <div class="mr-3 marginRight">
-                       
-                            <img width=65px; src="`+ path + imgArray[i] + `" alt="">
+                        <img width=65px; src="`+ path + imgArray[i] + `" alt="">
                     </div>  
-                        <div class="flex-grow-1 tags">
-                           
-                                <h3>`+ bookData[i].product_id.description + `</h3>
-                                 <p>`+ bookData[i].product_id.author + `</p>
-                                 <p class="price">Rs `+ bookData[i].product_id.price + `</p>
-                           
-                        </div>
-                        <div class="flex-grow-0 d-flex">
-                                <div class="btnWidth mr-3">     
-                                    <button type="button" class="btn btn-primary btn-sm " id="`+ bookData[i].product_id._id + `" onclick="addToCart(id);">ADD TO BAG</button>
-                                 </div> 
-                           
-                                <div class="deleteTag">
-                                     <i class="far fa-trash-alt" id="`+ i + `" onclick="deleteWishlistItems(id)"></i>
-                                </div> 
-                                    
-                           
-                        </div>
-              
+                    <div class="flex-grow-1 tags">
+                           <h3>`+ bookData[i].product_id.description + `</h3>
+                            <p>`+ bookData[i].product_id.author + `</p>
+                            <p class="price">Rs `+ bookData[i].product_id.price + `</p>
+                    </div>
+                    <div class="flex-grow-0 d-flex">
+                        <div class="btnWidth mr-3">     
+                            <button type="button" class="btn btn-primary btn-sm " id="`+ bookData[i].product_id._id + `" onclick="addToCart(id);">ADD TO BAG</button>
+                        </div> 
+                        <div class="deleteTag">
+                            <i class="far fa-trash-alt" id="`+ i + `" onclick="deleteWishlistItems(id)"></i>
+                        </div> 
+                    </div>
                 </div>
                
                 
@@ -104,7 +97,7 @@ function addToCart(id) {
         .then(res => {
 
             console.log("response of add cart", res)
-           
+
             getCartDetails();
             const removeWishlistItems = (id) => {
 
@@ -123,7 +116,7 @@ function addToCart(id) {
 
                     })
 
-            }        
+            }
             removeWishlistItems(id);
             getWishlistDetails();
         })
@@ -147,11 +140,6 @@ function getCartDetails() {
             bookData = res.data.result;
 
             document.getElementById("countIcon").innerHTML = bookData.length > 0 ? bookData.length : "";
-
-
-            // document.getElementById("addedBooks").innerHTML = cartDetailsHTML;     
-
-
 
         })
 }

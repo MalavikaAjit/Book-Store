@@ -103,10 +103,8 @@ img{
 }
 .lastBtn{
     border-radius: 3px;
-    /* padding: 5px; */
     font-size: 15px;
     display: flex;
-    /* padding-right: 34px; */
     width: 100%;
 }
 .lastBtn .btn-secondary{
@@ -151,7 +149,7 @@ img{
     padding-left: 4px;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
     color: red;
-    /* margin-top: 14px; */
+   
 }
 label{
     margin-bottom: 0px!important;
@@ -161,13 +159,7 @@ label{
     float: right;
 }
 /******/
-/* .first-container{
-    
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+
 .password {
     margin-top: 1%;
 }
@@ -193,14 +185,8 @@ label{
 }
 .content {
     padding: 0px 0px 0px;
-    /* border-style: solid; */
-    /* border-width: 1.5px; */
-    /* border-color: rgb(187, 185, 185); */
-    /* border-radius: 10px; */
     width: 20rem;
     height: 85%;
-    /* display: flex; */
-    /* flex-direction: row; */
     overflow: hidden;
 }
 
@@ -214,14 +200,9 @@ label{
     } 
     .form-content {
         width: 100%;
-        /* padding-bottom: 279px; */
     }
     .content {
-        /* padding: 37px 43px 49px; */
-        /* border-style: solid; */
-        /* border-width: 1.5px; */
-        /* border-color: rgb(187, 185, 185); */
-        border-radius: 10px;
+       border-radius: 10px;
         width: 100% !important;
         height: 100vh !important;
         display: flex;
@@ -232,8 +213,6 @@ label{
         margin-top: 32px;
         height: 100% !important;
         display: flex;
-        /* justify-content: center; */
-        /* align-items: center; */
         width: 100% !important;
     }
     .password input.form-control {
@@ -251,9 +230,7 @@ label{
         font-size: 15px;
     }
     .login-signup-div {
-        /* position: absolute; */
-        top: -34px;
-        /* left: 50%; */
+       top: -34px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         box-shadow: 0px 5px 15px #00000029;
         border: 1px solid #E4E4E4;
@@ -320,14 +297,8 @@ label{
     }
     .content {
         padding: 0px 0px 0px;
-        /* border-style: solid; */
-        /* border-width: 1.5px; */
-        /* border-color: rgb(187, 185, 185); */
-        /* border-radius: 10px; */
         width: 19rem;
         height: 85%;
-        /* display: flex; */
-        /* flex-direction: row; */
         overflow: hidden;
     }
 }

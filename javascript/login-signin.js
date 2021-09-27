@@ -116,9 +116,9 @@ postService('bookstore_user/login', data, headers)
     console.log(res.data.result)  ;     
     console.log("yaay")   ;   
     localStorage.setItem("accessToken", res.data.result.accessToken);  
-    localStorage.setItem("fullName", res.result.fullName);
+    
     if (res) {
-        // window.location.href = 'dashboard.html';
+        window.location.href = 'dashboard.html';
     }
 })
 clearLogin();

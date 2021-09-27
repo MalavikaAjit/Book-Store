@@ -264,23 +264,18 @@ padding-left: 0px;
     font-size: 9px;
   }
   .myCart {
-   font-size: 16px;
-   
+    font-size: 16px;
+  }
+  .headerDetails {
+    font-size: 18px;
+  }
 }
-.headerDetails {
-  font-size: 18px;
-  
-}
-
- 
-}
-@media only screen  and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .navbar-nav .positionChange {
     left: -21px;
   }
   .headerDetails {
     font-size: 18px;
-    
   }
   .marginRight {
     margin-right: 0.5rem !important;
@@ -290,25 +285,25 @@ padding-left: 0px;
     } */
 }
 @media only screen and (min-width: 760px) and (max-width: 1100px) {
-  .bookDetails{
-  padding-top: 20px;
+  .bookDetails {
+    padding-top: 20px;
   }
-  .deleteTag i{
+  .deleteTag i {
     font-size: 23px;
   }
   .btn-sm {
     font-size: 13px;
   }
-  .tags h3{
+  .tags h3 {
     font-size: 20px;
   }
   .tags p {
     font-size: 18px;
   }
-  .price{
+  .price {
     font-size: 20px;
   }
-  .myCart{
+  .myCart {
     font-size: 23px;
   }
   .footerDetails {
@@ -316,5 +311,5 @@ padding-left: 0px;
     margin-left: 12px;
     padding-top: 5px !important;
     padding-bottom: 8px !important;
-}
+  }
 }
